@@ -1,0 +1,123 @@
+.anchor{
+	color: var(--primary-color) ;
+}
+.anchor:hover{
+	color: var(--primary-color) ;
+}
+.sign-main{
+	height: calc(100vh - 104px);
+	background: rgba(0, 0, 0, 0.25);
+}
+.sign-main::before{
+	height: 100vh;
+	width: 100vw;
+	content: '';
+	position: absolute;
+	background: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/sign-bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	
+}
+.sign-main .sign-form-area{
+	width: 1312px;
+}
+.sign-main .sign-form{
+	background: var(--text-secondary-color);
+	border-radius: 24px;
+}
+.sign-main .sign-form .nav-tabs .nav-item{
+	width: 50%;
+	padding: 28px 0px 10px 0px;
+	/*border-bottom: 2px solid rgba(58, 58, 58, 0.1);	*/
+}
+.sign-main .sign-form .nav-tabs .nav-item .nav-link{
+	font-weight: 600;
+	line-height: 28px;
+	letter-spacing: 0.02em;
+	color: var(--text-primary-color);
+
+}
+.sign-main .sign-form .sign-in-content input, .sign-main .sign-form .sign-up-content input{
+	background: #FFFFFF;
+	border: 1px solid rgba(58, 58, 58, 0.1);
+	border-radius: 8px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	padding-left: 24px;
+}
+.sign-main .sign-form .sign-in-content input:nth-child(1){
+	margin-bottom: 28px;
+}
+.sign-main .sign-form .sign-in-content input:nth-child(2){
+	margin-bottom: 20px;
+}
+.sign-main .sign-form .tab-pane{
+	padding: 28px;
+}
+.sign-main .sign-form .forgot-pw a{
+	font-weight: 600;
+	line-height: 28px;
+	letter-spacing: 0.02em;
+	color: var(--text-primary-color);
+}
+.sign-main .sign-form .forgot-pw{
+	margin-bottom: 20px;
+}
+.sign-main .sign-form .sign-in-button{
+	background: var(--primary-color);
+	padding: 18px 0px;
+	border-radius: 8px;
+	margin-bottom: 28px;
+}
+
+.sign-main .sign-form .sign-in-button a{
+	font-weight: bold;
+	line-height: 28px;
+	letter-spacing: 0.02em;
+	color: #FFFFFF;
+}
+.form-already{
+	font-weight: 600;
+	line-height: 28px;
+	letter-spacing: 0.02em;
+	color: var(--text-primary-color);
+}
+.form-already a{
+	color: var(--primary-color);
+}
+.form-already a:hover{
+	color: var(--primary-color);
+}
+.sign-main .sign-form .sign-up-content input{
+	margin-bottom: 28px;
+}
+.sign-main .sign-form .sign-up-name input{
+ 	width: 48.5%;
+}
+.active{
+	color: var(--primary-color) !important;
+}
+.nav-link-active{
+	border-bottom: 2px solid var(--primary-color) !important;
+}
+.nav-link-inactive{
+	border-bottom: 2px solid rgba(58, 58, 58, 0.1);
+}
+.sign-up{
+	padding: 28px;
+}
+.btn{
+	font-size: 20px;
+}
+
+/*Responsive Css*/
+@media(max-width: 1315px){
+	.sign-form-area{
+		padding: 0px 20px;
+	}
+}
+

@@ -4,3 +4,4 @@
 //= link_tree ../../../vendor/javascript .js
 //= link main.js
 //= link slider.js
+//= link sign.js
