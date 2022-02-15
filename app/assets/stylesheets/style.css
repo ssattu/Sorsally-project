@@ -263,23 +263,21 @@
   cursor: pointer;
   pointer-events: all;
 }
-.step:not(:last-child)::before, .step:not(:last-child)::after {
+.step::before, .step::after {
   display: block;
   position: absolute;
   top: 30%;
-  left: 50%;
+  left: 0%;
   height: 0.25rem;
   content: "";
-  transform: translateY(-50%);
+  transform: translateY(50%);
   will-change: width;
-  z-index: 1;
-  /* transition: width 2.0s ease-in-out, opacity 1s ease-in-out; */
-
-  border: 2px dashed #d2edfc;
+  /* z-index: 1; */
+  border: 2px solid #d2edfc;
 }
 
 .step::after {
-  border: 2px solid #00C2FF !important;
+  border: 0px solid #00C2FF !important;
 }
 .step__icon {
   display: flex;
@@ -324,7 +322,7 @@
   /*background-color: #FFCEBD;*/
 }
 .step::after {
-  width: 0;
+  width: 0%;
   background-color: #00C2FF;
 }
 .step--complete::after {

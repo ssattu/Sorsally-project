@@ -29,11 +29,11 @@
               <%= f.password_field :password_confirmation, placeholder:"Confirm Password" %>
             </div>
             <div class="sign-in-button text-center">
-                  <%= f.submit "Sign up",class:"btn text-white text-center f-20" %>
+                  <%= f.submit "Sign up",class:"btn text-white text-center f-20", style:"font-size: 20px;" %>
             </div>
             <div class="form-already text-center f-20">
               <%= render "users/shared/error_messages", resource: resource %>
-              <p class="m-0">Already have an account? <a href="/users/sign_in">Sign in</a></p>
+              <p class="m-0 last-text">Already have an account? <a href="/users/sign_in">Sign in</a></p>
             </div>
           </div>
         </div>
