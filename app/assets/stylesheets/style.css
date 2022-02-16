@@ -193,7 +193,7 @@
   width: 64px;
   height: 64px;
   top: 30%;
-  left: -6%;
+  left: -4%;
   
 }
 .slider .right-arrow{
@@ -201,7 +201,7 @@
   width: 64px;
   height: 64px;
   top: 30%;
-  right: -6%;
+  right: -4%;
   
 }
 .slider .details{
@@ -273,7 +273,7 @@
   transform: translateY(50%);
   will-change: width;
   /* z-index: 1; */
-  border: 2px solid #d2edfc;
+  border: 2px dashed #d2edfc;
 }
 
 .step::after {
@@ -546,12 +546,12 @@
 }
 .section6-content .section6-content-text {
   color: var(--text-primary-color);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 42px;
   margin-bottom: 24px;
 }
 .section6-content .section6-content-box-content{
-  width: 206px;
+  width: 195px;
   height: 138px;
   background: #FCFCFC;
   border-radius: 10px;

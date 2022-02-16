@@ -3,10 +3,6 @@
     background: var(--primary-color);
 }
 
-.top-bar .navbar-collapse{
-    margin-right: 88px;
-}
-
 .top-bar .nav-item .nav-link{
     font-weight: 500;
     font-size: 14px;
@@ -61,6 +57,10 @@
     font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.02em;
+    color: var(--text-secondary-color);
+}
+.main-navbar .btn:hover{
+    background: var(--primary-color);
     color: var(--text-secondary-color);
 }
 

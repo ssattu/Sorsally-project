@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "sorsallys#index"
   resources :sorsallys
+  resources :catalogs
 end

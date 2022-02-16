@@ -511,23 +511,23 @@
         <div class="row mx-0 justify-content-between">
           <div class="col-lg-4 col-md-6 col-sm-12 footer-logo-section">
            <%= image_tag "#{ENV['BUCKET_URL']}footer-logo.svg",class:"footer-logo w-100",  alt:"" %>
-            <p class="f-20">Sed ut perspiciatis unde omnis iste natus 
+            <p class="f-18">Sed ut perspiciatis unde omnis iste natus 
             error sit volupta accusantium doloremque.</p>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 d-flex footer-top-content-location">
             <div class="d-flex flex-column footer-top-content-info">
               <div class="location d-flex align-items-start">
            <%= image_tag "#{ENV['BUCKET_URL']}location.svg",class:"footer-loc",  alt:"" %>
-                <p class="f-20 m-0">136, Ground Floor, Vishal House, Nehru 
+                <p class="f-16 m-0">136, Ground Floor, Vishal House, Nehru 
                 Market , Zamrudpur, GK-I, New Delhi - 110048</p>
               </div>
               <div class="whatsapp d-flex">
            <%= image_tag "#{ENV['BUCKET_URL']}whatsapp.svg", alt:"" %>
-                <a class="f-20" href="tel:99 585 27 662">+91 99 585 27 662</a>
+                <a class="f-16" href="tel:99 585 27 662">+91 99 585 27 662</a>
               </div>
               <div class="mail d-flex">
            <%= image_tag "#{ENV['BUCKET_URL']}mail.svg", alt:"" %>
-                <a class="f-20" href="mailto:sales@galaxytrendz.com">sales@galaxytrendz.com</a>
+                <a class="f-16" href="mailto:sales@galaxytrendz.com">sales@galaxytrendz.com</a>
               </div>
             </div>
             <div class="d-flex footer-menu">
@@ -543,11 +543,68 @@
       </div>
     </div>
     <div class="copyright-section">
-      <p class="text-center m-0 f-20">Copyright ©2022 All rights reserved by <a href="#">DevoHack</a></p>
+      <p class="text-center m-0 f-16">Copyright ©2022 All rights reserved by <a href="#">DevoHack</a></p>
     </div>
   </div>
 </footer>
 
+<script>
+  $('.slider').slick({
+  dots: false,
+  speed: 300,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  // infinite : true,
+  nextArrow:  '<%= image_tag "#{ENV['BUCKET_URL']}right-arrow.svg", alt:"", class:"right-arrow" %>',
+  prevArrow:  '<%= image_tag "#{ENV['BUCKET_URL']}left-arrow.svg", alt:"", class:"left-arrow" %>',
+  // prevArrow : '<img class="left-arrow" src="assets/images/left-arrow.svg" alt="">',
+  responsive: [
+  {
+    breakpoint: 1500,
+    settings: {
+      slidesToShow: 5,
+      infinite: true,
+
+    }
+  },
+ 
+  {
+    breakpoint: 1180,
+    settings: {
+      slidesToShow: 3,
+      infinite: true,
+
+    }
+  },
+  {
+    breakpoint: 792,
+    settings: {
+      slidesToShow: 2,
+      infinite: true,
+    }
+  },
+  {
+    breakpoint: 494,
+    settings: {
+      slidesToShow: 1,
+      infinite: true,
+    }
+  }
+  ]
+});
+
+$('.slider-2').slick({
+  dots: false,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  infinite : true,
+  nextArrow:  '<%= image_tag "#{ENV['BUCKET_URL']}right-arrow.svg", alt:"", class:"right-arrow" %>',
+  prevArrow:  '<%= image_tag "#{ENV['BUCKET_URL']}left-arrow.svg", alt:"", class:"left-arrow" %>',
+  // nextArrow : '<img class="right-arrow" src="assets/images/right-arrow.svg" alt="">',
+  // prevArrow : '<img class="left-arrow" src="assets/images/left-arrow.svg" alt="">',
+});
+</script>
+
 <%= javascript_include_tag 'slider'%>
-<%= javascript_include_tag 'main'%>
 

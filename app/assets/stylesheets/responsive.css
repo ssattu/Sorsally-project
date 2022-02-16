@@ -68,7 +68,7 @@
     margin-bottom: 20px;
   }
   .responsive-display{
-    display: block;
+    display: block !important;
   }
   .desktop-display{
     display: none;
@@ -95,34 +95,34 @@
 /* *********************** Slick Slider ********************************** */
 @media (max-width: 1439px){
   .slider .left-arrow{
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    top: 95%;
-    left: 38%;
+    position: absolute !important;
+    width: 64px !important;
+    height: 64px !important;
+    top: 95% !important;
+    left: 38% !important;
 
   }
   .slider .right-arrow{
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    top: 95%;
-    right: 38%;
+    position: absolute !important;
+    width: 64px !important;
+    height: 64px !important;
+    top: 95% !important;
+    right: 38% !important;
   }
   .slider-2 .left-arrow{
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    top: 100%;
-    left: 38%;
+    position: absolute !important;
+    width: 64px !important;
+    height: 64px !important;
+    top: 100% !important;
+    left: 38% !important;
 
   }
   .slider-2 .right-arrow{
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    top: 100%;
-    right: 38%;
+    position: absolute !important;
+    width: 64px !important;
+    height: 64px !important;
+    top: 100% !important;
+    right: 38% !important;
   }
 }
 @media (max-width: 500px){
