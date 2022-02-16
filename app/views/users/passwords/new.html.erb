@@ -1,16 +1,28 @@
-<h2>Forgot your password?</h2>
-
+<header>
+    <%= render 'shared/navbar'%>
+  </header>
+<section>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="forgot-main d-flex align-items-center">
+    <div class="row forgot-form-area mx-auto">
+      <div class="col-lg-6 col-md-8 col-sm-12 forgot-form p-0">
+        <div class="forgot-form-content">
+          <li class="nav-link-active list-unstyled forgot-heading">
+          <p class="f-20">Forgot Password?<p> </li>
+          <div class="d-flex flex-column forgot-email">
+            <%= f.email_field :email, autofocus: true, placeholder:"Email your mail..." %>
+          </div>
+          <div class="forgot-submit">
+            <%= f.submit "Send me reset password instructions" %>
+          </div>
+          <div class="back-to-login text-center">
+            <div class="form-already text-center f-20">
+              <p class="m-0 last-text">Back to <a class="ms-2" href="/users/sign_in">Sign in</a></p>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
+</section>
