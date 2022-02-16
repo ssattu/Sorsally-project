@@ -193,7 +193,7 @@
   width: 64px;
   height: 64px;
   top: 30%;
-  left: -6%;
+  left: -4%;
   
 }
 .slider .right-arrow{
@@ -201,7 +201,7 @@
   width: 64px;
   height: 64px;
   top: 30%;
-  right: -6%;
+  right: -4%;
   
 }
 .slider .details{
@@ -263,23 +263,21 @@
   cursor: pointer;
   pointer-events: all;
 }
-.step:not(:last-child)::before, .step:not(:last-child)::after {
+.step::before, .step::after {
   display: block;
   position: absolute;
   top: 30%;
-  left: 50%;
+  left: 0%;
   height: 0.25rem;
   content: "";
-  transform: translateY(-50%);
+  transform: translateY(50%);
   will-change: width;
-  z-index: 1;
-  /* transition: width 2.0s ease-in-out, opacity 1s ease-in-out; */
-
+  /* z-index: 1; */
   border: 2px dashed #d2edfc;
 }
 
 .step::after {
-  border: 2px solid #00C2FF !important;
+  border: 0px solid #00C2FF !important;
 }
 .step__icon {
   display: flex;
@@ -324,7 +322,7 @@
   /*background-color: #FFCEBD;*/
 }
 .step::after {
-  width: 0;
+  width: 0%;
   background-color: #00C2FF;
 }
 .step--complete::after {
@@ -375,9 +373,6 @@
   background: #FFFFFF;
   border-radius: 10px;
   display: none;
-}
-.container1 {
-  /*position: absolute;*/
 }
 .work-text-container .row{
   padding: 40px;
@@ -551,12 +546,12 @@
 }
 .section6-content .section6-content-text {
   color: var(--text-primary-color);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 42px;
   margin-bottom: 24px;
 }
 .section6-content .section6-content-box-content{
-  width: 206px;
+  width: 195px;
   height: 138px;
   background: #FCFCFC;
   border-radius: 10px;
