@@ -84,6 +84,14 @@
 	letter-spacing: 0.02em;
 	color: var(--text-primary-color);
 }
+.form-control-1:focus{
+	/* outline: blue !important; */
+	outline: none;
+	border: 3px solid var(--primary-color)
+ !important;
+
+}
+
 /*Responsive Css*/
 @media(max-width: 1315px){
 	.forgot-form-area{

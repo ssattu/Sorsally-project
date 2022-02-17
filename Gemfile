@@ -106,3 +106,5 @@ gem 'carrierwave-data-uri'
 
 gem 'fog-aws'
 gem 'jquery-rails'
+gem 'city-state'
+gem 'awesome_print'
