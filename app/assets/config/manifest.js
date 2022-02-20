@@ -5,3 +5,4 @@
 //= link_tree ../products
 //= link slider.js
 //= link sign.js
+//= link gallery.js

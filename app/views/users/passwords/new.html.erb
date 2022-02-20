@@ -7,13 +7,16 @@
     <div class="row forgot-form-area mx-auto">
       <div class="col-lg-6 col-md-8 col-sm-12 forgot-form p-0">
         <div class="forgot-form-content">
-          <li class="nav-link-active list-unstyled forgot-heading">
-          <p class="f-20">Forgot Password?<p> </li>
+          <li class="list-unstyled forgot-heading">
+          <p class="f-24">Forgot Password?<p> </li>
+            <li class="list-unstyled"><p class="f-16 pb-3">
+              Enter your Email for reset password instruction
+            </p></li>
           <div class="d-flex flex-column forgot-email">
-            <%= f.email_field :email, placeholder:"Email your mail...",class:"form-control-1" %>
+            <%= f.email_field :email, placeholder:"Email your mail...",class:"form-control-1", style:"width:100%;" %>
           </div>
           <div class="forgot-submit">
-            <%= f.submit "Send me reset password instructions" %>
+            <%= f.submit "Continue " %>
           </div>
           <div class="back-to-login text-center">
             <div class="form-already text-center f-20">
