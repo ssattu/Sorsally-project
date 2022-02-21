@@ -1,0 +1,209 @@
+.banner-wrapper{
+	background-image:url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/about/about-banner1.jpg');
+	background-size: cover;
+	height: 60vh;
+}
+
+.banner-wrapper h1{
+	color: #FFF;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.1em;
+    letter-spacing: -2px;
+    margin-bottom: 35px;
+}
+
+.banner-wrapper h5{
+	color: #fff;
+	font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+ 	margin-bottom: 15px;
+    letter-spacing: 2.3px;
+}
+
+.banner-wrapper .btn{
+	background: var(--primary-color);
+	padding: 15px 30px;
+	font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary-color);
+    border-radius: 6px;
+}
+.banner-wrapper .btn:hover{
+	color: var(--text-secondary-color);
+}
+
+/******** story ***********/
+.story{
+  max-width: 1312px;
+  margin-top: 120px !important;
+  margin-bottom: 120px;
+}
+.story-content{
+	 margin-bottom: 36px;
+}
+.story-content hr {
+  width: 80px;
+  height: 2px !important;
+  color: var(--text-primary-color);
+  margin-right: 15px;
+}
+.story-content h3 {
+  color: var(--text-primary-color);
+  font-weight: 500;
+  line-height: 48px;
+ 
+}
+
+.story-content h3 span {
+  color: var(--primary-color);
+}
+
+.story .story-content-text {
+  color: var(--text-primary-color);
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+
+/********** label ************/
+.label-sec{
+	padding: 80px 0;
+	background: var(--secondary-color);
+}
+.label{
+	max-width: 1085px;
+	padding: 10px;
+}
+.label h4{
+	margin-bottom: 30px;
+	font-size: 33px;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+.label .btn{
+	background: var(--primary-color);
+	padding: 15px 30px;
+	font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary-color);
+    border-radius: 6px;
+}
+.label .btn:hover{
+	color: var(--text-secondary-color);
+}
+/*help section*/
+.helped{
+  max-width: 1312px;
+  margin-top: 120px !important;
+  margin-bottom: 120px;
+  padding: 10px;
+}
+.helped .heading h4{
+   font-size: 36px ;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+.helped .heading-2 h2{
+	font-size: 24px;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin-bottom: 28px;
+}
+.helped .heading-2 h2 span{
+	font-weight: 700;
+}
+.helped .work-list ul li{
+	font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+/************** partner *******************/
+.partner{
+	max-width: 1312px;
+  margin-top: 120px !important;
+  margin-bottom: 120px;
+  padding: 10px;
+}
+.partner p{
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 32px;
+}
+.partner .card hr{
+  width: 80px;
+  height: 2px !important;
+  color: #3A3A3A;
+  margin-right: 15px;
+}
+.partner .card img{
+	padding: 40px;
+}
+.partner .card .card-body{
+	padding: 0 40px 40px 40px;
+}
+.partner .card .card-body .card-title{
+	margin: 40px 0;
+	font-size: 25px;
+	font-weight: 700;
+}
+.partner .card .card-body .card-text{
+	font-size: 18px;
+	font-weight: 500;
+}
+.partner .card .card-body p i{
+	margin-right: 10px;
+	font-size: 18px;
+	font-weight: 500;
+}
+.partner .card .card-body a{
+	color: var(--primary-color);
+
+}
+
+/*partner logo*/
+.partner-logo-sec{
+	background: var(--primary-color);
+	padding: 100px 0;
+}
+.partner-logo{
+	max-width: 1312px;
+}
+.partner-logo .p-logo{
+	max-width: 150px;
+	/*height: 100px;*/
+	padding: 0 20px;
+}
+/**************  media query  **************/
+
+
+@media(max-width: 544px){
+	/* for banner */
+	.banner-wrapper h1{
+		color: #FFF;
+	    font-size: 40px;
+	    font-weight: 400;
+	    line-height: 1.1em;
+	    letter-spacing: -2px;
+	    margin-bottom: 30px;
+	}
+}
+@media(max-width: 767px){
+	/*for story*/
+	.story{
+		padding: 10px;
+	}
+	.partner-logo{
+		flex-direction: column;
+	}
+	.p-logo{
+		margin-bottom: 37px;
+	}
+}
+
