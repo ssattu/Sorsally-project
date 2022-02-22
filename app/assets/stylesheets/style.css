@@ -1,21 +1,21 @@
 /*Banner section */
 
-.banner-wrapper{
+.banner-wrapper-main{
   background: var(--secondary-color);
 }
-.banner-wrapper .hero-col-1{
+.banner-wrapper-main .hero-col-1{
   padding-right: 74px;
 }
 
-.banner-wrapper .hero-col-2{
+.banner-wrapper-main .hero-col-2{
   padding: 0;
 }
 
-.banner-wrapper .hero-inner{
+.banner-wrapper-main .hero-inner{
   max-width: 590px;
 }
 
-.banner-wrapper .hero-inner .banner-h1{
+.banner-wrapper-main .hero-inner .banner-h1{
   font-style: normal;
   font-weight: normal;
   font-size: 56px;
@@ -23,7 +23,7 @@
   color: var(--text-primary-color);
 }
 
-.banner-wrapper .hero-inner .banner-h1 span{
+.banner-wrapper-main .hero-inner .banner-h1 span{
   font-style: normal;
   font-weight: 600;
   font-size: 56px;
@@ -31,7 +31,7 @@
   color: var(--text-primary-color);
 }
 
-.banner-wrapper .banner-text{
+.banner-wrapper-main .banner-text{
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -40,11 +40,11 @@
   margin-top: 22px;
   margin-bottom: 24px;
 }
-.banner-wrapper .hero-inner .form{
+.banner-wrapper-main .hero-inner .form{
   max-width: 590px;
 }
 
-.banner-wrapper .hero-inner .form .input{
+.banner-wrapper-main .hero-inner .form .input{
   background: var(--text-secondary-color);
   border-radius: 10px 0 0 10px;
   border: none;
@@ -55,11 +55,11 @@
   width:25rem;
 }
 
-.banner-wrapper .hero-inner .form .input:focus {
+.banner-wrapper-main .hero-inner .form .input:focus {
   outline: none;
 }
 
-.banner-wrapper .hero-inner input[type="email"] {
+.banner-wrapper-main .hero-inner input[type="email"] {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -67,7 +67,7 @@
   color: #B8B8B8;
 }
 
-.banner-wrapper .hero-inner .form .btn{
+.banner-wrapper-main .hero-inner .form .btn{
   background: var(--primary-color);
   border-radius: 0px 10px 10px 0px;
   padding: 18px 36px;
