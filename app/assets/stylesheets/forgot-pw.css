@@ -25,6 +25,7 @@
 }
 .forgot-form-content{
 	padding: 28px;
+	position: relative;
 }
 .forgot-form-content h1{
 	font-weight: 600;
@@ -68,6 +69,24 @@
 	font-weight: bold;
 	font-size: 18px;
 }
+.forgot-form-content .field-1  .toggle-password-1 {
+    position: absolute;
+    right: 47px;
+    z-index: 2;
+    top: 103px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #00c2ff;
+}
+.forgot-form-content .field-2 .toggle-password-2 {
+    position: absolute;
+    right: 47px;
+    z-index: 2;
+    top: 189px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #00c2ff;
+}
 .nav-link-active {
     border-bottom: 2px solid var(--primary-color) !important;
 }
@@ -98,3 +117,5 @@
 		padding: 0px 20px;
 	}
 }
+
+
