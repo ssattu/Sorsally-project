@@ -1,25 +1,41 @@
-<h2>Change your password</h2>
+<header>
+    <%= render 'shared/navbar'%>
+  </header>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="forgot-main d-flex align-items-center">
+    <div class="row forgot-form-area mx-auto">
+      <div class="col-lg-6 col-md-8 col-sm-12 forgot-form p-0">
+        <div class="forgot-form-content">
+          <li class="list-unstyled forgot-heading">
+          <p class="f-20">Change Password?<p> </li>
+  
+          <div class="d-flex flex-column forgot-email">
+            <div class="field">
+              <%= f.password_field :password, autocomplete: "new-password",  placeholder:"Enter Password",class:"form-control-1", style:"width:100%;"  %>
+            </div><br>
+            <div class="field">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder:"Confirm Password",class:"form-control-1", style:"width:100%;" %>
+            </div>
+            </div>
+            <div class="forgot-submit">
+          <div class="actions">
+            <%= f.submit "Change my password" %>
+          </div>
+          </div>
+          <div class="back-to-login text-center">
+            <div class="form-already text-center f-20">
+              <p class="m-0 last-text">Back to <a class="ms-2" href="/users/sign_in">Sign in</a></p>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
+
 <% end %>
 
-<%= render "users/shared/links" %>

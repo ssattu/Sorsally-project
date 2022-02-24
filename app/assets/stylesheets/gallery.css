@@ -1,10 +1,10 @@
-.banner-wrapper h1{
+.banner-wrapper-gallery h1{
   color: #fff;
   font-size: 4rem;
   font-weight: 700 !important;
   text-shadow: 1px 2px #000;
 }
-.banner-wrapper{
+.banner-wrapper-gallery{
   margin-bottom: 48px;
 }
 .gallery{
@@ -18,8 +18,8 @@
   margin-left: 31px;
   margin-bottom: 48px;
 }
-.banner-wrapper{
- background: url('../assets/gallery/banner.jpg');
+.banner-wrapper-gallery{
+ background-image: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/gallery/banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
