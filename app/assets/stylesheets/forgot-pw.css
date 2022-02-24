@@ -87,7 +87,7 @@
 .form-control-1:focus{
 	/* outline: blue !important; */
 	outline: none;
-	border: 3px solid var(--primary-color)
+	border: 0.75px solid var(--primary-color)
  !important;
 
 }

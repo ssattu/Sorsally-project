@@ -26,7 +26,7 @@
               </div>
               <div class="sign-up-name d-flex justify-content-between">
               <%= f.text_field :zip_code, placeholder:"Zip Code",class:"form-control-1" %>
-              <%= f.select :country, options_for_select(CS.countries.map{ |c| [c[1], c[1]]}) ,placeholder:"Country",class:"form-control-1" %>
+              <%= f.select :country, options_for_select(CS.countries.map{ |c| [c[1], c[1]]},selected: [:India]), default: 'United States' , selected:"India",class:"form-control-1" %>
               </div>
               <%= f.email_field :email, placeholder:"Email Address", class:"form-control-1"  %>
               <%= f.password_field :password, placeholder:"New Password",class:"form-control-1" %>
