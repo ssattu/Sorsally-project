@@ -13,13 +13,11 @@
           <p class="f-24">Change Password?<p> </li>
   
           <div class="d-flex flex-column forgot-email">
-            <div class="field field-1">
-              <%= f.password_field :password, autocomplete: "new-password",  placeholder:"Enter Password",class:"form-control-1", style:"width:100%;", id:"password-1" %>
-              <i class="toggle-password-1 bi bi-eye-slash" id="togglePassword-1"></i>
+            <div class="field">
+              <%= f.password_field :password, autocomplete: "new-password",  placeholder:"Enter Password",class:"form-control-1", style:"width:100%;"  %>
             </div><br>
-            <div class="field field-2">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder:"Confirm Password",class:"form-control-1", style:"width:100%;" , id:"password-2"%>
-              <i class="toggle-password-2 bi bi-eye-slash" id="togglePassword-2"></i>
+            <div class="field">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder:"Confirm Password",class:"form-control-1", style:"width:100%;" %>
             </div>
             </div>
             <div class="forgot-submit">
@@ -40,6 +38,4 @@
 
 
 <% end %>
-
-<%= javascript_include_tag "forgotPassword" %>
 

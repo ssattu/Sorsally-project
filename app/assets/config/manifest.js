@@ -7,5 +7,4 @@
 //= link sign.js
 //= link gallery.js
 //= link product-details.js
-//= link sign_up
-//= link forgotPassword.js
+

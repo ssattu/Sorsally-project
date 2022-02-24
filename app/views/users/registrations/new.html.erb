@@ -28,13 +28,10 @@
               <%= f.select :country, options_for_select(CS.countries.map{ |c| [c[1], c[1]]},selected: [:India]), default: 'United States' , selected:"India",class:"form-control-1" %>
               <%= f.text_field :zip_code, placeholder:"Zip Code",class:"form-control-1" %>
               </div>
-              <%= f.text_field :contact, placeholder:"Phone number",class:"form-control-1"%>
+              <%= f.text_field :contact, placeholder:"Phone number",class:"form-control-1" %>
               <%= f.email_field :email, placeholder:"Email Address", class:"form-control-1"  %>
-              <%= f.password_field :password, placeholder:"New Password",class:"form-control-1", id:"password-1" %>
-              <i class="toggle-password-1 bi bi-eye-slash" id="togglePassword-1"></i>
-              <%= f.password_field :password_confirmation, placeholder:"Confirm Password" ,class:"form-control-1", id:"password-2"%>
-              <i class="toggle-password-2 bi bi-eye-slash" id="togglePassword-2"></i>
-                    
+              <%= f.password_field :password, placeholder:"New Password",class:"form-control-1" %>
+              <%= f.password_field :password_confirmation, placeholder:"Confirm Password" ,class:"form-control-1"%>
             </div>
             <div class="sign-in-button text-center">
                   <%= f.submit "Sign up",class:"btn text-white text-center p-0 f-20 fw-bold", style:"font-size: 20px;" %>
@@ -51,5 +48,5 @@
 </section>
 
 
-<%= javascript_include_tag 'sign_up'%>
+<%= javascript_include_tag 'sign'%>
 

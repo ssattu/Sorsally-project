@@ -1,17 +1,14 @@
+// var signIn = document.querySelector('.sign-in');
+// var signUp = document.querySelector('.sign-up');
+// var btn1 = document.querySelector('.btn-1');
+// var btn2 = document.querySelector('.btn-2');
 
-console.log(1);
 
-const togglePassword = document.querySelector("#togglePassword");
-        const password = document.querySelector("#password");
-        togglePassword.addEventListener("click", function () {
-            console.log(10);
-            // toggle the type attribute
-            var type = password.getAttribute("type") === "password" ? "text" : "password";
-            console.log(type)
-            password.setAttribute("type", type);
-            // toggle the icon
-            this.classList.toggle("bi-eye");
-            // $(".bi-eye").toggle();
-        });
-        
-
+// btn1.addEventListener('click', function(){
+// 	signIn.classList.add('nav-link-active');
+// 	signUp.classList.remove('nav-link-active');
+// });			
+// btn2.addEventListener('click', function(){
+// 	signIn.classList.remove('nav-link-active');
+// 	signUp.classList.add('nav-link-active');
+// });	
