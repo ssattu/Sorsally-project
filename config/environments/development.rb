@@ -58,7 +58,8 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
-  config.hosts.clear
+  # config.hosts.clear
+  config.hosts << /[a-z0-9]+\.c9users\.io/
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
@@ -83,4 +84,5 @@ Rails.application.configure do
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
+
 end
