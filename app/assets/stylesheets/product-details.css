@@ -1,0 +1,304 @@
+.product-details{
+	background: #F7FCFF;
+}
+.product-small-images-container{
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	background: #fff;
+}
+.product-small-images-container::-webkit-scrollbar{
+	display: none;
+}
+.product-small-images-container{
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+.product-details .product-small-image{
+	padding: 16px;
+}
+.carousel-control-next-icon{
+	background-image: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/product-details-next-arrow.svg') !important;
+}
+.carousel-control-prev-icon{
+	background-image: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/product-details-prev-arrow.svg') !important;
+}
+.product-details .product-small-image .images{
+	width: 180px;
+	height: 180px;
+	border-radius: 15px;
+}
+.product-details .product-small-image .images img{
+	border-radius: 15px;
+	padding: 10px;
+	height: 100%;
+}
+.product-details .product-content a{
+	font-weight: 500;
+	line-height: 28px;
+	color: var(--text-primary-color);
+}
+.product-details .product-content a.product-active{
+	color: rgba(58, 58, 58, 0.5);
+}
+.product-content .product-color{
+	background: #fff;
+}
+.product-selection{
+	background: #FFFFFF;
+	border: 1px solid rgba(58, 58, 58, 0.1);
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding: 18px 24px;
+}
+.product-selection-text{
+	width: 102px;
+	border-right: 2px solid #3a3a3a;
+}
+.product-selection-text p{
+	font-weight: 500;
+	line-height: 28px;
+	color: var(--text-primary-color);
+}
+
+/*checkboxes*/
+.product-options ul {
+	padding-left: 16px !important;
+	list-style-type: none;
+}
+
+.product-options li {
+	margin: 0px 8px;
+	display: inline-block;
+}
+
+.product-options input[type="checkbox"][id^="color-"], .product-options input[type="checkbox"][id^="size-"], .product-options input[type="radio"][id^="quantity-"]{
+	display: none;
+}
+
+.product-options label {
+	border: 1px solid #fff;
+	padding: 4px;
+	display: block;
+	position: relative;
+	cursor: pointer;
+}
+
+.product-options label::before {
+	background-color: white;
+	color: white;
+	content: " ";
+	display: block;
+	border-radius: 50%;
+	border: 1px solid grey;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	line-height: 28px;
+	transition-duration: 0.4s;
+	transform: scale(0);
+}
+.product-options label{
+	border: 1px solid rgba(58, 58, 58, 0.1);
+	box-sizing: border-box;
+	border-radius: 3px;
+}
+
+.product-options :checked + label {
+	border: 1px solid #00C2FF;
+	box-sizing: border-box;
+	border-radius: 3px;
+}
+.product-color{
+	height: 24px;
+	width: 24px;
+	border-radius: 2px;
+}
+.color-1{
+	background: var(--text-primary-color) !important;
+}
+.color-2{
+	background: #E93256 !important;
+}
+.color-3{
+	background: var(--primary-color) !important;
+}
+.color-4{
+	background: #8332E9 !important;
+}
+.color-5{
+	background: #9E1E37 !important;
+}
+.color-6{
+	background: #2F49A6 !important;
+}
+.color-7{
+	background: #0C670F !important;
+}
+
+.product-selection{
+	margin: 24px 0px;
+}
+.product-selection .product-size{
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	color: var(--text-primary-color);
+}
+.product-selection .size label{
+	height: 32px;
+	min-width: 32px;
+}
+.product-options.size :checked + label, .product-options.quantity :checked + label{
+	background: rgba(0, 194, 255, 0.1);
+}
+.product-options.size :checked + label div, .product-options.quantity :checked + label div{
+	color: var(--primary-color);
+}
+.product-options.message{
+	margin-left: 24px;
+}
+.product-options.message input{
+	outline: none !important;
+	border: none !important;
+}
+.send-query-button{
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 0.02em;
+	color: #FFFFFF;
+	padding: 22px 36px;
+	background: #00C2FF;
+	border-radius: 6px;
+	border: none;
+}
+.product-details-call{
+	margin-top: 30px;
+}
+.product-choice{
+	border: 1px solid rgba(58, 58, 58, 0.1);
+	background: #fff;
+	padding: 18px 24px;
+	border-radius: 10px;
+	margin: 10px 0px;
+}
+.product-choice-label{
+	width: 20%;
+	/* border-right: 2px solid #3a3a3a; */
+	margin-right: 10px;
+}
+.product-choice-label p{
+	font-weight: 500;
+	line-height: 28px;
+	color: var(--text-primary-color);
+}
+.product-select{
+	width: 80%;
+}
+select:focus{
+	outline: none;
+}
+.product-select select{
+	padding: 12px 36px;
+	background: transparent;
+	font-weight: 500;
+	line-height: 28px;
+	color: var(--text-primary-color);
+	border: 1px solid rgba(58, 58, 58, 0.1);
+	width: 100%
+}
+.product-content{
+	padding: 54px;
+}
+
+/*Modal*/
+.trigger{
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 0.02em;
+	/* color: #FFFFFF; */
+	padding: 22px 36px;
+	/* background: #00C2FF; */
+	    background: transparent;
+    color: #00c2ff;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+	margin-right: 20px;
+	display: block !important ;
+}
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* opacity: 0; */
+	/* visibility: hidden; */
+	display: none;
+}
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 1rem 1.5rem;
+	width: 90% !important;
+	border-radius: 0.5rem;
+}
+.close-button {
+	float: right;
+	width: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0.25rem;
+}
+.close-button i{
+	font-size: 35px;
+	display: block !important ;
+}
+.show-modal {
+	opacity: 1;
+	visibility: visible;''
+	/* display: block !important; */
+	display: none;
+}
+.close-button{
+	background: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/close-fill.svg');
+	width: 24px;
+	height: 24px;
+	
+}
+
+
+/*Responsive Product Details*/
+@media(max-width: 572px){
+	.product-details .product-content{
+		padding: 0;
+	}
+}
+@media(max-width: 500px){
+	.product-selection{
+		width: 371px;
+		margin: 20px auto;
+	}
+	.product-options{
+		overflow-y: auto;
+		white-space: nowrap;
+	}
+	.product-options::-webkit-scrollbar{
+		display: none;
+	}
+}

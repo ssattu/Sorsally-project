@@ -10,14 +10,16 @@
       <div class="col-lg-6 col-md-8 col-sm-12 forgot-form p-0">
         <div class="forgot-form-content">
           <li class="list-unstyled forgot-heading">
-          <p class="f-20">Change Password?<p> </li>
+          <p class="f-24">Change Password?<p> </li>
   
           <div class="d-flex flex-column forgot-email">
-            <div class="field">
-              <%= f.password_field :password, autocomplete: "new-password",  placeholder:"Enter Password",class:"form-control-1", style:"width:100%;"  %>
+            <div class="field field-1">
+              <%= f.password_field :password, autocomplete: "new-password",  placeholder:"Enter Password",class:"form-control-1", style:"width:100%;", id:"password-1" %>
+              <i class="toggle-password-1 bi bi-eye-slash" id="togglePassword-1"></i>
             </div><br>
-            <div class="field">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder:"Confirm Password",class:"form-control-1", style:"width:100%;" %>
+            <div class="field field-2">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder:"Confirm Password",class:"form-control-1", style:"width:100%;" , id:"password-2"%>
+              <i class="toggle-password-2 bi bi-eye-slash" id="togglePassword-2"></i>
             </div>
             </div>
             <div class="forgot-submit">
@@ -38,4 +40,6 @@
 
 
 <% end %>
+
+<%= javascript_include_tag "forgotPassword" %>
 

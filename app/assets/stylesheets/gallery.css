@@ -4,9 +4,6 @@
   font-weight: 700 !important;
   text-shadow: 1px 2px #000;
 }
-.banner-wrapper-gallery{
-  margin-bottom: 48px;
-}
 .gallery{
   padding: 20px;
   /*background: #F7FCFF;*/
@@ -23,7 +20,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 0 15%;
   height: 45vh;
+  margin-bottom: 48px;
 }
 
 .work {
@@ -170,6 +169,24 @@
   }
 }
 
+@media (max-width: 867px) and (min-width: 610px) {
+  .work .category-buttons {
+    margin: 0 0 30px 0 !important;
+    padding: 0 !important;
+  }
+  .work .category-buttons a {
+    display: inline-block;
+    width: 48.5%;
+    padding: 12px 10px !important;
+    margin: 1.5% 1% !important;
+  }
+  .work .category-buttons a:nth-child(even) {
+    margin-right: 0 !important;
+  }
+  .work .category-buttons a:nth-child(odd) {
+    margin-left: 0 !important;
+  }
+}
 @media (max-width: 610px) {
   .work .category-buttons {
     margin: 0 0 30px 0 !important;

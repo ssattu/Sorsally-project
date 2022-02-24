@@ -94,7 +94,7 @@ $(document).ready(function() {
     var totalHeight = 0;
     var largest = 0;
     var heights = [];
-    for (i = 0; i < projects.length; i++) {
+    for (var i = 0; i < projects.length; i++) {
       $(projects[i]).css({
         height: 'auto'
       });

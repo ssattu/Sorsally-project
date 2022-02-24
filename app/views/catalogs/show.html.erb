@@ -1,0 +1,289 @@
+<%= render 'shared/navbar'%>
+<section>
+  <div class="product-details">
+    <div class="row mx-0">
+      <div class="col-lg-6 col-md-12 col-sm-12 px-lg-0">
+        <div class="product-main-image">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="product-small-images-container">
+          <div class="product-small-image d-flex">
+            <div class="images">
+              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
+            </div>
+            <div class="images">
+              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-2.png", alt:"", class:"w-100" %>
+            </div>
+            <div class="images">
+              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
+            </div>
+            <div class="images">
+              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
+            </div>
+            <div class="images">
+              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
+        <div class="product-content">
+          <span class="f-20"><a href="">Home</a> / <a href="">Catalog</a> / <a class="product-active" href="">Black Tank Top</a> </span>
+          <h1 class="product-heading">Black Tank Top</h1>
+          <h3 class="product-price">$24.95-$249.5</h3>
+          <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore as ame magna aliqua.</p>
+          <!-- Color -->
+          <div class="product-choice d-flex">
+            <div class="product-choice-label d-flex align-items-center">
+              <p class="f-20 my-0">Color</p>
+            </div>
+            <div class="product-select">
+              <select>
+                <option selected>Select color</option>
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="green">Green</option>
+                <option value="pink">Pink</option>
+                <option value="blue">Blue</option>
+              </select>
+            </div>
+          </div>
+          <!-- Size -->
+          <div class="product-choice d-flex">
+            <div class="product-choice-label d-flex align-items-center">
+              <p class="f-20 my-0">Size</p>
+            </div>
+            <div class="product-select">
+              <select>
+                <option selected>Select size</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                <option value="xxl">XXL</option>
+                <option value="xxxl">XXXL</option>
+              </select>
+            </div>
+          </div>
+          <!-- Quantity -->
+          <div class="product-choice d-flex">
+            <div class="product-choice-label d-flex align-items-center">
+              <p class="f-20 my-0">Quantity</p>
+            </div>
+            <div class="product-select">
+              <select>
+                <option selected>Select quantity</option>
+                <option value="12">12</option>
+                <option value="24">24</option>
+                <option value="36">36</option>
+                <option value="48">48</option>
+                <option value="56">56</option>
+                <option value="60">60</option>
+                <option value="72">72</option>
+                <option value="84">84</option>
+                <option value="96">96</option>
+                <option value="108">108</option>
+              </select>
+            </div>
+          </div>
+    <!-- Send Query -->
+    <div class="d-flex float-end product-details-call">
+      <button class="trigger">Easy Customisation</button>
+      <input type="submit" class=" float-end send-query-button" value="Send Query">     
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal">
+  <div class="modal-content">
+    <div>
+      <span class="close-button"></span>
+    </div>
+    <div class="modal-body">
+      <div class="row mx-0">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+          <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12">
+          <!-- Color -->
+          <div class="product-selection selection-type-color d-flex align-items-center">
+            <div class="product-selection-text d-flex">
+              <p class="f-20 my-0">Color</p>
+            </div>
+            <div class="product-options color">
+             <ul class="my-0">
+              <li>
+                <input type="checkbox" id="color-1" />
+                <label for="color-1"><div class="product-color color-1"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-2" />
+                <label for="color-2"><div class="product-color color-2"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-3" />
+                <label for="color-3"><div class="product-color color-3"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-4" />
+                <label for="color-4"><div class="product-color color-4"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-5" />
+                <label for="color-5"><div class="product-color color-5"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-6" />
+                <label for="color-6"><div class="product-color color-6"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-7" />
+                <label for="color-7"><div class="product-color color-7"></div></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Size -->
+        <div class="product-selection selection-type-size d-flex align-items-center">
+          <div class="product-selection-text d-flex">
+            <p class="f-20 my-0">Size</p>
+          </div>
+          <div class="product-options size">
+           <ul class="my-0">
+            <li>
+              <input type="checkbox" id="size-1" />
+              <label for="size-1"><div class="product-size">XS</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-2" />
+              <label for="size-2"><div class="product-size">S</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-3" />
+              <label for="size-3"><div class="product-size">M</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-4" />
+              <label for="size-4"><div class="product-size">L</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-5" />
+              <label for="size-5"><div class="product-size">XL</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-6" />
+              <label for="size-6"><div class="product-size">XXL</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-7" />
+              <label for="size-7"><div class="product-size">XXXL</div></label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Quantity -->
+      <div class="product-selection selection-type-quantity d-flex align-items-center">
+        <div class="product-selection-text d-flex">
+          <p class="f-20 my-0">Quantity</p>
+        </div>
+        <div class="product-options quantity">
+         <ul class="my-0">
+          <li>
+            <input type="radio" id="quantity-1" name="quantity" />
+            <label for="quantity-1"><div class="product-quantity">12</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-2" name="quantity" />
+            <label for="quantity-2"><div class="product-quantity">24</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-3" name="quantity" />
+            <label for="quantity-3"><div class="product-quantity">36</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-4" name="quantity" />
+            <label for="quantity-4"><div class="product-quantity">48</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-5" name="quantity" />
+            <label for="quantity-5"><div class="product-quantity">56</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-6" name="quantity" />
+            <label for="quantity-6"><div class="product-quantity">60</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-7" name="quantity" />
+            <label for="quantity-7"><div class="product-quantity">72</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-8" name="quantity" />
+            <label for="quantity-8"><div class="product-quantity">84</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-9" name="quantity" />
+            <label for="quantity-9"><div class="product-quantity">96</div></label>
+          </li>
+          <li>
+            <input type="radio" id="quantity-10" name="quantity" />
+            <label for="quantity-10"><div class="product-quantity">108</div></label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Message -->
+    <div class="product-selection selection-type-quantity d-flex align-items-center">
+      <div class="product-selection-text d-flex">
+        <p class="f-20 my-0">Size</p>
+      </div>
+      <div class="product-options message">
+        <input class="product-message" type="text" id="message" placeholder="Type here..." />
+      </div>
+    </div>
+    <!-- Send Query -->
+    <div class="d-flex justify-content-center">
+      <input type="submit" class=" float-end send-query-button" value="Send Query">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<%= javascript_include_tag 'product-details'%>
+
+
+<%= render 'shared/footer' %>
+
+
+
+
+
+
+
+
+
