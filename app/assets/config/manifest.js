@@ -6,4 +6,3 @@
 //= link sign.js
 //= link gallery.js
 //= link product-details.js
-

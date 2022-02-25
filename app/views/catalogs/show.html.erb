@@ -49,83 +49,7 @@
           <h1 class="product-heading">Black Tank Top</h1>
           <h3 class="product-price">$24.95-$249.5</h3>
           <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore as ame magna aliqua.</p>
-          <!-- Color -->
-          <div class="product-choice d-flex">
-            <div class="product-choice-label d-flex align-items-center">
-              <p class="f-20 my-0">Color</p>
-            </div>
-            <div class="product-select">
-              <select>
-                <option selected>Select color</option>
-                <option value="red">Red</option>
-                <option value="orange">Orange</option>
-                <option value="green">Green</option>
-                <option value="pink">Pink</option>
-                <option value="blue">Blue</option>
-              </select>
-            </div>
-          </div>
-          <!-- Size -->
-          <div class="product-choice d-flex">
-            <div class="product-choice-label d-flex align-items-center">
-              <p class="f-20 my-0">Size</p>
-            </div>
-            <div class="product-select">
-              <select>
-                <option selected>Select size</option>
-                <option value="xs">XS</option>
-                <option value="s">S</option>
-                <option value="m">M</option>
-                <option value="l">L</option>
-                <option value="xl">XL</option>
-                <option value="xxl">XXL</option>
-                <option value="xxxl">XXXL</option>
-              </select>
-            </div>
-          </div>
-          <!-- Quantity -->
-          <div class="product-choice d-flex">
-            <div class="product-choice-label d-flex align-items-center">
-              <p class="f-20 my-0">Quantity</p>
-            </div>
-            <div class="product-select">
-              <select>
-                <option selected>Select quantity</option>
-                <option value="12">12</option>
-                <option value="24">24</option>
-                <option value="36">36</option>
-                <option value="48">48</option>
-                <option value="56">56</option>
-                <option value="60">60</option>
-                <option value="72">72</option>
-                <option value="84">84</option>
-                <option value="96">96</option>
-                <option value="108">108</option>
-              </select>
-            </div>
-          </div>
-    <!-- Send Query -->
-    <div class="d-flex float-end product-details-call">
-      <button class="trigger">Easy Customisation</button>
-      <input type="submit" class=" float-end send-query-button" value="Send Query">     
-    </div>
-  </div>
-</div>
-</div>
 
-
-<!-- Modal -->
-<div class="modal">
-  <div class="modal-content">
-    <div>
-      <span class="close-button"><i class="ri-close-fill"></i></span>
-    </div>
-    <div class="modal-body">
-      <div class="row mx-0">
-        <div class="col-lg-5 col-md-5 col-sm-12">
-          <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-12">
           <!-- Color -->
           <div class="product-selection selection-type-color d-flex align-items-center">
             <div class="product-selection-text d-flex">
@@ -207,7 +131,125 @@
         <div class="product-selection-text d-flex">
           <p class="f-20 my-0">Quantity</p>
         </div>
-        <div class="product-options quantity">
+        <div class="product-options message quantity">
+        <input class="product-message" type="text" id="message" placeholder="Enter quantity..." />
+      </div>
+    </div>
+    <!-- Message -->
+    <div class="product-selection selection-type-quantity d-flex align-items-center">
+      <div class="product-selection-text d-flex">
+        <p class="f-20 my-0">Message</p>
+      </div>
+      <div class="product-options message">
+        <input class="product-message" type="text" id="message" placeholder="Type here..." />
+      </div>
+    </div>
+    <!-- Send Query -->
+    <div class="d-flex float-end product-details-call">
+      <button class="trigger">Easy Customisation</button>
+      <input type="submit" class=" float-end send-query-button" value="Send Query">     
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal">
+  <div class="modal-content">
+    <div>
+      <span class="close-button"></span>
+    </div>
+    <div class="modal-body">
+      <div class="row mx-0">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+          <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12">
+          <h1 class="product-heading">Black Tank Top</h1>
+          <h3 class="product-price">Easy Customisation</h3>
+          <!-- Color -->
+          <div class="product-selection selection-type-color d-flex align-items-center">
+            <div class="product-selection-text d-flex">
+              <p class="f-20 my-0">Color</p>
+            </div>
+            <div class="product-options-modal color">
+             <ul class="my-0">
+              <li>
+                <input type="checkbox" id="color-8" />
+                <label for="color-8"><div class="product-color color-8"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-9" />
+                <label for="color-9"><div class="product-color color-9"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-10" />
+                <label for="color-10"><div class="product-color color-10"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-11" />
+                <label for="color-11"><div class="product-color color-11"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-12" />
+                <label for="color-12"><div class="product-color color-12"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-13" />
+                <label for="color-13"><div class="product-color color-13"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-14" />
+                <label for="color-14"><div class="product-color color-14"></div></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Size -->
+        <div class="product-selection selection-type-size d-flex align-items-center">
+          <div class="product-selection-text d-flex">
+            <p class="f-20 my-0">Size</p>
+          </div>
+          <div class="product-options-modal size">
+           <ul class="my-0">
+            <li>
+              <input type="checkbox" id="size-8" />
+              <label for="size-8"><div class="product-size">XS</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-9" />
+              <label for="size-9"><div class="product-size">S</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-10" />
+              <label for="size-10"><div class="product-size">M</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-11" />
+              <label for="size-11"><div class="product-size">L</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-12" />
+              <label for="size-12"><div class="product-size">XL</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-13" />
+              <label for="size-13"><div class="product-size">XXL</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-14" />
+              <label for="size-14"><div class="product-size">XXXL</div></label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Quantity -->
+      <div class="product-selection selection-type-quantity d-flex align-items-center">
+        <div class="product-selection-text d-flex">
+          <p class="f-20 my-0">Quantity</p>
+        </div>
+        <div class="product-options-modal quantity">
          <ul class="my-0">
           <li>
             <input type="radio" id="quantity-1" name="quantity" />
@@ -255,14 +297,14 @@
     <!-- Message -->
     <div class="product-selection selection-type-quantity d-flex align-items-center">
       <div class="product-selection-text d-flex">
-        <p class="f-20 my-0">Size</p>
+        <p class="f-20 my-0">Message</p>
       </div>
       <div class="product-options message">
         <input class="product-message" type="text" id="message" placeholder="Type here..." />
       </div>
     </div>
     <!-- Send Query -->
-    <div class="d-flex justify-content-center">
+    <div class="float-end">
       <input type="submit" class=" float-end send-query-button" value="Send Query">
     </div>
   </div>
@@ -278,12 +320,3 @@
 
 
 <%= render 'shared/footer' %>
-
-
-
-
-
-
-
-
-

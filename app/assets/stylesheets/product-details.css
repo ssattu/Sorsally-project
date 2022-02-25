@@ -34,10 +34,6 @@
 	padding: 10px;
 	height: 100%;
 }
-.product-details .product-content{
-	padding-left: 56px;
-	padding-right: 54px;
-}
 .product-details .product-content a{
 	font-weight: 500;
 	line-height: 28px;
@@ -67,29 +63,33 @@
 }
 
 /*checkboxes*/
-.product-options ul {
+.product-options ul, .product-options-modal ul {
 	padding-left: 16px !important;
 	list-style-type: none;
 }
 
-.product-options li {
+.product-options li, .product-options-modal li{
 	margin: 0px 8px;
 	display: inline-block;
 }
 
-.product-options input[type="checkbox"][id^="color-"], .product-options input[type="checkbox"][id^="size-"], .product-options input[type="radio"][id^="quantity-"]{
+.product-options input[type="checkbox"][id^="color-"], .product-options input[type="checkbox"][id^="size-"], .product-options input[type="radio"][id^="quantity-"],
+.product-options-modal input[type="checkbox"][id^="color-"], .product-options-modal input[type="checkbox"][id^="size-"], .product-options-modal input[type="radio"][id^="quantity-"]{
 	display: none;
 }
 
-.product-options label {
+.product-options label, .product-options-modal label{
 	border: 1px solid #fff;
 	padding: 4px;
 	display: block;
 	position: relative;
 	cursor: pointer;
+	border: 1px solid rgba(58, 58, 58, 0.1);
+	box-sizing: border-box;
+	border-radius: 3px;
 }
 
-.product-options label::before {
+.product-options label::before, .product-options-modal label::before{
 	background-color: white;
 	color: white;
 	content: " ";
@@ -106,13 +106,8 @@
 	transition-duration: 0.4s;
 	transform: scale(0);
 }
-.product-options label{
-	border: 1px solid rgba(58, 58, 58, 0.1);
-	box-sizing: border-box;
-	border-radius: 3px;
-}
 
-.product-options :checked + label {
+.product-options :checked + label, .product-options-modal :checked + label {
 	border: 1px solid #00C2FF;
 	box-sizing: border-box;
 	border-radius: 3px;
@@ -143,6 +138,27 @@
 .color-7{
 	background: #0C670F !important;
 }
+.color-8{
+	background: var(--text-primary-color) !important;
+}
+.color-9{
+	background: #E93256 !important;
+}
+.color-10{
+	background: var(--primary-color) !important;
+}
+.color-11{
+	background: #8332E9 !important;
+}
+.color-12{
+	background: #9E1E37 !important;
+}
+.color-13{
+	background: #2F49A6 !important;
+}
+.color-14{
+	background: #0C670F !important;
+}
 
 .product-selection{
 	margin: 24px 0px;
@@ -158,16 +174,16 @@
 	height: 32px;
 	min-width: 32px;
 }
-.product-options.size :checked + label, .product-options.quantity :checked + label{
+.product-options.size :checked + label, .product-options.quantity :checked + label, .product-options-modal.size :checked + label, .product-options-modal.quantity :checked + label{
 	background: rgba(0, 194, 255, 0.1);
 }
-.product-options.size :checked + label div, .product-options.quantity :checked + label div{
+.product-options.size :checked + label div, .product-options.quantity :checked + label div, .product-options-modal.size :checked + label div, .product-options-modal.quantity :checked + label div{
 	color: var(--primary-color);
 }
-.product-options.message{
+.product-options.message, .product-options-modal.message{
 	margin-left: 24px;
 }
-.product-options.message input{
+.product-options.message input, .product-options-modal.message input{
 	outline: none !important;
 	border: none !important;
 }
@@ -218,7 +234,13 @@ select:focus{
 	width: 100%
 }
 .product-content{
-	padding: 10%;
+	padding: 54px;
+}
+.product-options{
+	width: 75%;
+}
+.product-message{
+	width: 100%;
 }
 
 /*Modal*/
@@ -227,13 +249,14 @@ select:focus{
 	font-size: 20px;
 	line-height: 20px;
 	letter-spacing: 0.02em;
-	color: #FFFFFF;
 	padding: 22px 36px;
-	background: #00C2FF;
+	background: transparent;
+	color: #00c2ff;
 	border-radius: 6px;
 	border: none;
 	cursor: pointer;
 	margin-right: 20px;
+	display: block !important ;
 }
 .modal {
 	position: fixed;
@@ -242,8 +265,7 @@ select:focus{
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
-	opacity: 0;
-	visibility: hidden;
+	display: none;
 }
 .modal-content {
 	display: flex;
@@ -267,11 +289,21 @@ select:focus{
 }
 .close-button i{
 	font-size: 35px;
+	display: block !important ;
 }
 .show-modal {
 	opacity: 1;
-	visibility: visible;
-	display: block !important;
+	visibility: visible;''
+	/* display: block !important; */
+	display: none;
+}
+.close-button{
+	background: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/close-fill.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 24px;
+	height: 24px;
+	
 }
 
 
