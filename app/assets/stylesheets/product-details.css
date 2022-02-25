@@ -293,8 +293,7 @@ select:focus{
 }
 .show-modal {
 	opacity: 1;
-	visibility: visible;''
-	/* display: block !important; */
+	visibility: visible;
 	display: none;
 }
 .close-button{
