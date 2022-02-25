@@ -26,6 +26,5 @@
 // window.addEventListener("keydown", escapeBtn);
 
 $('.trigger, .close-button').click(function () {
-	console.log(6)
 	$('.modal').toggle();
 })
