@@ -203,3 +203,16 @@
     font-size: 20px;
   }
 }
+@media(max-width: 595px){
+  .testimonial-complete{
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial-menu{
+    width: 70% !important;
+    margin-bottom: 40px;
+  }
+  .testimonial-content{
+    width: 100% !important;
+  }
+}

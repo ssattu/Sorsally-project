@@ -503,6 +503,97 @@
   </div>
 </section>
 
+<!-- Testimonial Section -->
+<section>
+    <div class="testimonial-main-body">
+      <div class="testimonial-container">
+        <div class="testimonial-heading d-flex align-items-center">
+          <hr>
+          <h2 class="my-0 fw-bold">Testimonials</h2>
+        </div>
+        <div class="d-flex testimonial-complete">
+          <div class="testimonial-menu d-flex flex-column">
+            <div class="testimonials testimonial-1 d-flex align-items-center py-3 active-testimonial">
+              <div class="img"></div>
+              <div class="testimonial-details">
+                <h3 class="my-0 fw-bold testimonial-content1">Jonas</h3>
+                <p class="my-0 testimonial-content1">Sales Manager</p>                
+              </div>
+            </div>
+            <div class="testimonials testimonial-2 d-flex align-items-center py-3">
+              <div class="img"></div>
+              <div class="testimonial-details">
+                <h3 class="my-0 fw-bold testimonial-contents2">John</h3>
+                <p class="my-0 testimonial-content2">Product Manager</p>                
+              </div>
+            </div>
+            <div class="testimonials testimonial-3 d-flex align-items-center py-3">
+              <div class="img"></div>
+              <div class="testimonial-details">
+                <h3 class="my-0 fw-bold testimonial-content3">Annie</h3>
+                <p class="my-0 testimonial-content3">General Manager</p>                
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="contents content-1 active-content">
+              <h3 class="fw-bold my-0">It was a great experience</h3>
+              <div class="testimonial-ratings d-flex my-3">
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-half"></i>             
+              </div>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente provident dolores maiores optio illo porro voluptatem corporis voluptates cum soluta dolor numquam natus quos dicta culpa, est, debitis. Repudiandae deserunt pariatur ea sapiente, iure nisi assumenda quisquam cum recusandae esse, deleniti, quam culpa minus consectetur atque nobis? Consectetur, sit, iure?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolor vel fuga provident ut veritatis impedit quasi vitae! Iure impedit eligendi iusto, assumenda magni.</p>
+            </div>
+            <div class="contents content-2 inactive-content">
+              <h3 class="fw-bold my-0">Great service</h3>
+              <div class="testimonial-ratings d-flex my-3">
+                <i class="bi bi-star-fill"></i>           
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>           
+                <i class="bi bi-star-fill"></i>           
+              </div>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente provident dolores maiores optio illo porro voluptatem corporis voluptates cum soluta dolor numquam natus quos dicta culpa, est, debitis. Repudiandae deserunt pariatur ea sapiente, iure nisi assumenda quisquam cum recusandae esse, deleniti, quam culpa minus consectetur atque nobis? Consectetur, sit, iure?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolor vel fuga provident ut veritatis impedit quasi vitae! Iure impedit eligendi iusto, assumenda magni.</p>
+            </div>
+            <div class="contents content-3 inactive-content">
+              <h3 class="fw-bold my-0">Love to work with them</h3>
+              <div class="testimonial-ratings d-flex my-3">
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star-fill"></i>             
+                <i class="bi bi-star"></i>             
+              </div>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente provident dolores maiores optio illo porro voluptatem corporis voluptates cum soluta dolor numquam natus quos dicta culpa, est, debitis. Repudiandae deserunt pariatur ea sapiente, iure nisi assumenda quisquam cum recusandae esse, deleniti, quam culpa minus consectetur atque nobis? Consectetur, sit, iure?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolor vel fuga provident ut veritatis impedit quasi vitae! Iure impedit eligendi iusto, assumenda magni.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Clients Section -->
+<section class="clients">
+  <div class="container">
+    <div class="client-slider">
+      <div class="slide"><img src="https://i.ibb.co/6HynNKS/wordpress.png"></div>
+      <div class="slide"><img src="https://i.ibb.co/41kkqNJ/cnn.png"></div>
+      <div class="slide"><img src="https://i.ibb.co/g6W04GJ/google.png"></div>
+      <div class="slide"><img src="https://i.ibb.co/CsFyzY8/hbo.png"></div>
+      <div class="slide"><img src="https://i.ibb.co/T20Ssx4/hulu.png"></div>
+      <div class="slide"><img src="https://i.ibb.co/ncvNQSB/ibm.png"></div>
+      <div class="slide"><img src="https://i.ibb.co/yPzSXPL/microsoft.png"></div>
+    </div>
+  </div>
+</section>
+
+
 <%= render 'shared/footer' %>
 <script>
   $('.slider').slick({
@@ -559,6 +650,63 @@ $('.slider-2').slick({
   prevArrow:  '<%= image_tag "#{ENV['BUCKET_URL']}left-arrow.svg", alt:"", class:"left-arrow" %>',
   // nextArrow : '<img class="right-arrow" src="assets/images/right-arrow.svg" alt="">',
   // prevArrow : '<img class="left-arrow" src="assets/images/left-arrow.svg" alt="">',
+});
+$('.client-slider').slick({
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 700,
+  arrows: false,
+  dots: false,
+  pauseOnHover: false,
+  responsive: [{
+    breakpoint: 991,
+    slidesToShow:5
+  },{
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 4
+    }
+  }, {
+    breakpoint: 520,
+    settings: {
+      slidesToShow: 2
+    }
+  }]
+});
+// Testimonial JS
+let testimonial1 = document.querySelector('.testimonial-1');
+let testimonial2 = document.querySelector('.testimonial-2');
+let testimonial3 = document.querySelector('.testimonial-3');
+let content1 = document.querySelector('.content-1');
+let content2 = document.querySelector('.content-2');
+let content3 = document.querySelector('.content-3');
+
+testimonial1.addEventListener('click',() => {
+  testimonial1.classList.add('active-testimonial');
+  testimonial2.classList.remove('active-testimonial');
+  testimonial3.classList.remove('active-testimonial');
+  content1.classList.add('active-content');
+  content2.classList.remove('active-content');
+  content3.classList.remove('active-content');
+});
+testimonial2.addEventListener('click',() => {
+  testimonial1.classList.remove('active-testimonial');
+  testimonial2.classList.add('active-testimonial');
+  testimonial3.classList.remove('active-testimonial');
+  content1.classList.remove('active-content');
+  content1.classList.add('inactive-content');
+  content2.classList.add('active-content');
+  content3.classList.remove('active-content');
+});
+testimonial3.addEventListener('click',() => {
+  testimonial1.classList.remove('active-testimonial');
+  testimonial2.classList.remove('active-testimonial');
+  testimonial3.classList.add('active-testimonial');
+  content1.classList.remove('active-content');
+  content1.classList.add('inactive-content');
+  content2.classList.remove('active-content');
+  content3.classList.add('active-content');
 });
 </script>
 
