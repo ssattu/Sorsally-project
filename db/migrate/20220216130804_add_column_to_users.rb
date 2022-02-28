@@ -1,4 +1,4 @@
-class AddColumnToUsers < ActiveRecord::Migration[7.0]
+class AddColumnToUsers < ActiveRecord::Migration[6.1]
   def change
     add_column :users, :zip_code, :string
     add_column :users, :country, :string
