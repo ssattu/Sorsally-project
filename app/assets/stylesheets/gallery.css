@@ -6,7 +6,6 @@
 }
 .gallery{
   padding: 20px;
-  /*background: #F7FCFF;*/
 }
 .gallery-maindiv{
   max-width: 1313px;
@@ -16,30 +15,24 @@
   margin-bottom: 48px;
 }
 .banner-wrapper-gallery{
- background-image: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/gallery/banner.jpg');
-  /* background: rgba(0, 0, 0, 0.25) !important; */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 0 15%;
-  height: 45vh;
-  margin-bottom: 48px;
+ background: rgba(0, 0, 0, 0.25) !important;
+ height: 45vh;
+ margin-bottom: 48px;
 }
-/* .banner-wrapper-gallery::before{
+.banner-wrapper-gallery::before{
+  height: 45vh;
+  width: 100vw;
   content: '';
-  z-index: -1;
-  background-image: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/gallery/banner.webp');
   position: absolute;
-  top: 0;
-  left: 0;
+  background: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/gallery/banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
   background-position: 0 15%;
-  height: 45vh;
-} */
+  top: 88px;
+  left: 0;
+  z-index: -1;
+}
 
 .work {
   padding-bottom: 40px;
@@ -156,10 +149,10 @@
 
 @media (max-width: 1320px) and (min-width: 768px){
   .work .category-buttons  {
-      flex: 0 0 auto;
-      width: 100% !important;
+    flex: 0 0 auto;
+    width: 100% !important;
   }
- }
+}
 
 @media (max-width: 720px) {
   .work .grid {
@@ -167,7 +160,7 @@
   }
 }
 
- @media (max-width: 700px) {
+@media (max-width: 700px) {
   .work .guide {
     width: 49.25%;
   }
