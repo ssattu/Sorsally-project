@@ -35,9 +35,7 @@
 }
 
 .main-navbar .nav-item .nav-link{
-    font-style: normal;
     font-weight: 600;
-    font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.02em;
     color: var(--text-primary-color);
@@ -52,9 +50,7 @@
     background: var(--primary-color);
     border-radius: 6px;
     padding: 17px 36px;
-    font-style: normal;
     font-weight: 600;
-    font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.02em;
     color: var(--text-secondary-color);

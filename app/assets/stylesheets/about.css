@@ -25,9 +25,7 @@
 .banner-wrapper .btn{
 	background: var(--primary-color);
 	padding: 15px 30px;
-	font-style: normal;
     font-weight: 600;
-    font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.02em;
     color: var(--text-secondary-color);
@@ -89,7 +87,6 @@
 	padding: 15px 30px;
 	font-style: normal;
     font-weight: 600;
-    font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.02em;
     color: var(--text-secondary-color);
