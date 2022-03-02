@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :sorsallys
   resources :galleries
   resources :about_us
-  resources :catalogs
+  resources :products
 end

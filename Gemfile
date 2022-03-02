@@ -79,22 +79,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'city-state' 
 
-gem 'humanize'
-
-
-gem 'omniauth'
-
-gem 'omniauth-facebook'
-
-# gem 'activerecord-session_store'
-
-gem 'omniauth-google-oauth2'
-
-gem 'omniauth-amazon'
-
-gem 'omniauth-github'
-
-# gem 'jquery-rails'
 
 gem 'devise'
 
