@@ -9,20 +9,20 @@
             <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                    Gender
                   </button>
                 </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse " aria-labelledby="panelsStayOpen-headingOne">
                   <div class="accordion-body">
-                   <div class="form-check">
-                    <input class="form-check-input gender" type="checkbox" value="" id="men">
+                  <div class="form-check">
+                    <input class="form-check-input gender" name="gender" value="men" type="checkbox" id="men">
                     <label class="form-check-label" for="men">
                       Men
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input gender" type="checkbox" value="" id="women">
+                    <input class="form-check-input gender" name="gender"  value="women" type="checkbox" id="women">
                     <label class="form-check-label" for="women">
                       Women
                     </label>
@@ -32,16 +32,16 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
                   Categories
                 </button>
               </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse " aria-labelledby="panelsStayOpen-headingTwo">
                 <div class="accordion-body">
                   <div class="form-check">
                     <% @categories.each do |category| %>
                       <div class="form-check">
-                        <input class="form-check-input category-checkbox" name="categories[]" type="checkbox" id="<%= category.id %>", value="<%= category.id %>" >
+                        <input class="form-check-input category-checkbox" name="categories" type="checkbox" id="<%= category.id %>", value="<%= category.id %>" >
                         <label class="form-check-label" for="<%= category.id%>">
                           <%= category.name %>
                         </label>
@@ -57,38 +57,28 @@
         </div>
       </div>                      
       <div class="col-lg-9 col-md-9">
-        <div class="row mx-0">
           <div class="col-12 product-list-total-nummber">
-            <p class="text-end f-20">Showing <span class="fw">1-3</span> of <span class="fw">36</span> results</p>
-          </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="hovereffect"> 
+            <div class="digg_pagination">
+            <div class="page_info ms-auto">
+              <%= page_entries_info @products %>
+             </div>
+           </div>
             <%= render partial: 'product', :locals => { :products => @products } %>
+              <div class="pagination-main">
+                <nav aria-label="...">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                      <%#= paginate @products%>
+                        <%= will_paginate @products, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , :previous_label => '<i class="ri-arrow-left-s-line"></i>', :next_label => '<i class="ri-arrow-right-s-line"></i>',inner_window: 1, outer_window: 1 %>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
           </div>
-          </div>
-        </div>
         </div>
       </div>
     </div>
     <!-- Pagination part -->
-    <div class="pagination-main">
-      <nav aria-label="...">
-        <ul class="pagination justify-content-end">
-          <li class="page-item disabled">
-           
-            <a class="page-link arrows prev-arrow" href="#" tabindex="-1" aria-disabled="true"><%= image_tag "#{ENV['BUCKET_URL']}product-page-prev-arrow.svg", alt:"" %></a>
-          </li>
-          <li class="page-item active" aria-current="page"><a class="page-link border-0 f-18 page-number" href="#">1</a></li>
-          <li class="page-item">
-            <a class="page-link border-0 f-18 page-number" href="#">2</a>
-          </li>
-          <li class="page-item"><a class="page-link border-0 f-18 page-number" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link arrows next-arrow" href="#"><%= image_tag "#{ENV['BUCKET_URL']}product-page-next-arrow.svg", alt:"" %></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
   </div>
   </div>
 
@@ -99,7 +89,7 @@
 <script type="text/javascript">
 
   $('.category-checkbox').click( () => {
-    var categories = $('input[type="checkbox"]:checked').map(function() {
+    var categories = $('input[name="categories"][type="checkbox"]:checked').map(function() {
       return $(this).val();
     }).get()
     console.log(categories);
@@ -111,14 +101,8 @@
       dataType: 'json',
       success: function(products) {
         // debugger
-        $('.products').empty();
+        $('.filter').empty();
         products.forEach(append_filtered_product)
-        // $('.products').toggle();
-        // if (result["scheduled_task_id"] != null) {
-        //   console.log("Schedule record => " + result["scheduled_task_id"])
-        // } else {
-        //   console.log("Error: " + result["error"])
-        // }
       },
       error: function() {
         console.log("Ajax request error");
@@ -128,11 +112,38 @@
 
   })
 
+    $('.gender').click( () => {
+    var gender = $('input[name="gender"][type="checkbox"]:checked').map(function() {
+      return $(this).val();
+    }).get()
+    console.log(gender);
+
+    $.ajax({
+      url: `/products`,
+      method: "get",
+      data: { gender: gender},
+      dataType: 'json',
+      success: function(products) {
+        // debugger
+        $('.filter').empty();
+        products.forEach(append_filtered_product)
+        
+      },
+      error: function() {
+        console.log("Ajax request error");
+      },
+     
+    });
+    })
+
+
   function append_filtered_product(product){
     let img_src = `<%= "#{ENV['BUCKET_PRODUCT_URL']}product-1.png" %>`
     let product_name = product.name
     let product_price = product.price
-    myhtml = `<div class="product"> <a href="/products/show"> <img alt="" class="w-100" src=${img_src}></a> <div class="product-name"> <h3 class="f-18 text-center">${product_name}</h3> <h2 class="f-24 text-center">${product_price}</h2> </div> </div>`
-    $(".products").append(myhtml)
+    myhtml = `<div class="col-lg-4 col-md-6"> <div class="hovereffect"> <div class="products"><div class="product"> <a href="/products/show"> <img alt="" class="w-100" src=${img_src}></a> <div class="product-name"> <h3 class="f-18 text-center">${product_name}</h3> <h2 class="f-24 text-center">${product_price}</h2> </div> </div></div></div></div>`
+    $(".filter").append(myhtml)
   }
+
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>

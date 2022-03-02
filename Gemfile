@@ -77,9 +77,6 @@ gem 'dotenv-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'city-state' 
-
-
 gem 'devise'
 
 gem 'sassc-rails'
@@ -93,3 +90,6 @@ gem 'jquery-rails'
 gem 'city-state'
 gem 'awesome_print'
 gem "letter_opener"
+gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
+gem 'kaminari'

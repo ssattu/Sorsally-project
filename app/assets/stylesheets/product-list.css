@@ -98,7 +98,7 @@
 	margin-bottom: 15px;
 }
 .product-list-main .products-container .accordion .accordion-button{
-	background: #FAFAFA;
+	background: rgba(0, 195, 255, 0.07);
 	border-radius: 10px 10px 0px 0px;
 	font-weight: 600;
 	font-size: 16px;
@@ -133,6 +133,7 @@
 }
 .products-container .accordion .accordion-body{
 	background: #fff;
+	margin-bottom: 20px;
 }
 .products-container .accordion .accordion-body .form-check-input{
 	border: 1px solid var(--text-primary-color);
@@ -145,31 +146,22 @@
 .products-container .pagination-main{
 	padding: 36px 24px 94px 24px;
 }
-.pagination-main .pagination .page-item .arrows{
-	background: var(--primary-color);
-	padding: 10px;
-}
-.pagination-main .pagination .page-item .prev-arrow{
-	border-radius: 6px 0px 0px 6px;	
-}
-.pagination-main .pagination .page-item .next-arrow{
-	border-radius: 0px 6px 6px 0px;
-}
-.pagination-main .pagination .page-item .page-number{
-	background: transparent;
-	border-radius: 6px;
-	font-weight: bold;
-	line-height: 20px;
-	display: flex;
-	align-items: center;
-	text-align: center;
-	color: #00C2FF;
-	padding: 18px 22px;
-}
-.pagination-main .pagination .page-item.active .page-number{
-	background: #D2F3FF;
+.accordion-item:last-of-type .accordion-button.collapsed {
+	margin-top: 20px;
 }
 
+.digg_pagination .page_info {
+    background: transparent;
+    color: black;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000;
+      /* background: #6aa6ed; */
+      padding: 0.1em 0.25em; }
+  
 
 /*Responsive Product-list*/
 @media(min-width: 991px){

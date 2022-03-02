@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-5.times {
-	Product.create!(name:"black_top", description:"lorem_ipsum", price:100.50, gender:"men", category_id:1)
-	Product.create!(name:"black_top", description:"lorem_ipsum", price:100.50, gender:"men", category_id:2)
+10.times {
+	Product.create!(name:"T-shirt", description:"lorem_ipsum", price:130.50, gender:"women", category_id:1)
+	Product.create!(name:"Hoddies", description:"lorem_ipsum", price:150.50, gender:"women", category_id:5)
 }

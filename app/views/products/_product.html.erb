@@ -1,12 +1,17 @@
-<div class="products">
-  <% @products.each do |product|%>
-    <div class="product">
-      <a href="/products/show"> <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-1.png", alt:"", class:"w-100" %></a>      
-      <div class="product-name">
-        <h3 class="f-18 text-center"><%= product.name%></h3>
-        <h2 class="f-24 text-center"><%= product.price%></h2>
-      </div>
+<div class="row mx-0 filter">
+<% @products.each do |product|%>
+  <div class="col-lg-4 col-md-6">
+    <div class="hovereffect"> 
+      <div class="products">
+        <div class="product">
+          <a href="/products/show"> <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-1.png", alt:"", class:"w-100" %></a>      
+          <div class="product-name">
+            <h3 class="f-18 text-center"><%= product.name%></h3>
+            <h2 class="f-24 text-center"><%= price(product)%></h2>
+          </div>
+        </div>
     </div>
-  <% end%>
+  </div>
 </div>
-<?
+<% end%>
+</div>
