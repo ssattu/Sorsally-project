@@ -1,6 +1,6 @@
 module ProductsHelper
 	def price(product)
-		product.present? ? "  ₹ #{product.price}.00"  :""
+		product.present? ? "  ₹ #{product.price.to_d.round(2)}" : ""
 	end
 
 end

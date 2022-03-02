@@ -15,3 +15,19 @@
 </div>
 <% end%>
 </div>
+
+
+
+<div class="pagination-main">
+                <nav aria-label="...">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                      <%#= will_paginate @products, renderer: BootstrapPagination::Rails %>
+                        <div class="will_paginate">
+                        <%= will_paginate @products, :container =>false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , :previous_label => '<i class="ri-arrow-left-s-line"></i>', :next_label => '<i class="ri-arrow-right-s-line"></i>',inner_window: 1, outer_window: 1, remote:true %>
+                        </div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+          </div>

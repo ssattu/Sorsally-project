@@ -92,4 +92,3 @@ gem 'awesome_print'
 gem "letter_opener"
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
-gem 'kaminari'
