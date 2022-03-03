@@ -1,21 +1,29 @@
 class ProductsController < ApplicationController
+  protect_from_forgery except: :index
   before_action :permit_all_params
   before_action :set_categories, only: :index
 
   def index
     # debugger
 
-
     # gender_ids
     # categories_ids
-
+    # debugger
+    @product_filters = params if product_params.present?
     # @products.
-    debugger
     if product_params.present?
       @products = Product.where( category_id: product_params[:categories] || Category.all.pluck(:id) ).where( gender: product_params[:gender] || [0, 1] ).paginate(page: (params[:page] || 1), per_page: 9)
     else
       @products = Product.paginate(page: params[:page] || 1, per_page: 9)
     end
+
+    respond_to do |format|
+      format.html 
+      format.js 
+    end
+
+
+
     # @products = Product.Product.paginate(page: params[:page], per_page: 9)
     # if categories_ids.present? || gender_ids.present?
     #   @products = Product.where(category_id: categories_ids).paginate(page: params[:page], per_page: 9) if categories_ids.present?

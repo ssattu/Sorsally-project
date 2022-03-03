@@ -1,8 +1,7 @@
-<% debugger %>
- $(".products_template").html('<%=  escape_javascript(render partial: 'product', :locals => { :products => @products }) %>');
-// $('.pagination a').attr('data-remote', 'true');
 
-// ('.products').html("<%= escape_javascript(render('product')) %>");
-// // $(".pagination a").ajaxPagination();
+ $("#products_template").html("<%= escape_javascript render(:partial => 'products/product', :locals => {:products => @products}) %>");
 
-// $("div#content").html('< %= escape_javascript(render "product") %>');
+<%# debugger %>
+console.log(2);
+// $(".pagination").click(;)
+// window.location.reload();

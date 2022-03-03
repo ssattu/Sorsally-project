@@ -1,3 +1,8 @@
+<div class="digg_pagination">
+  <div class="page_info ms-auto">
+    <%= page_entries_info @products %>
+   </div>
+ </div>
 <div class="row mx-0 filter">
 <% @products.each do |product|%>
   <div class="col-lg-4 col-md-6">
@@ -19,15 +24,20 @@
 
 
 <div class="pagination-main">
-                <nav aria-label="...">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                      <%#= will_paginate @products, renderer: BootstrapPagination::Rails %>
-                        <div class="will_paginate">
-                        <%= will_paginate @products, :container =>false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , :previous_label => '<i class="ri-arrow-left-s-line"></i>', :next_label => '<i class="ri-arrow-right-s-line"></i>',inner_window: 1, outer_window: 1, remote:true %>
-                        </div>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-          </div>
+    <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <%#= will_paginate @products, renderer: BootstrapPagination::Rails %>
+            <div class="will_paginate">
+            <%= will_paginate @products, :container =>false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , :previous_label => '<i class="ri-arrow-left-s-line"></i>', :next_label => '<i class="ri-arrow-right-s-line"></i>',inner_window: 1, outer_window: 1, remote:true %>
+            </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<script >
+  
+</script>

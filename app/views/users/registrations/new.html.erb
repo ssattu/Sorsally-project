@@ -47,6 +47,8 @@
 <% end %>
 </section>
 
-
-<%= javascript_include_tag 'sign'%>
-
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#new_form').validate();
+  })
+</script>

@@ -1,0 +1,141 @@
+<%= render 'shared/navbar'%>
+<section id="my-product">
+  <div class="product-list-main">
+    <div class="products-container mx-auto">
+      <div class="row mx-0">
+        <!-- Category Selection -->
+        <div class="col-lg-3 col-md-3 category-selection-list px-0">
+          <div>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                   Gender
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse " aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body">
+                  <div class="form-check">
+                    <input class="form-check-input gender" name="gender" value="men" type="checkbox" id="men">
+                    <label class="form-check-label" for="men">
+                      Men
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input gender" name="gender"  value="women" type="checkbox" id="women">
+                    <label class="form-check-label" for="women">
+                      Women
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                  Categories
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse " aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <% @categories.each do |category| %>
+                      <div class="form-check">
+                        <input class="form-check-input category-checkbox" name="categories" type="checkbox" id="<%= category.id %>", value="<%= category.id %>", autocomplete="off" />
+                        <label class="form-check-label" for="<%= category.id%>">
+                          <%= category.name %>
+                        </label>
+                      </div>
+                    <% end %>
+                    </ul>
+                    <%# end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>                      
+      <div class="col-lg-9 col-md-9">
+          <div class="col-12 product-list-total-nummber">
+            
+           <div id="products_template" >
+
+            <%= render partial: 'product', :locals => { :products => @products } %>
+           </div>    
+        </div>
+      </div>
+    </div>
+    <!-- Pagination part -->
+  </div>
+  </div>
+
+</section>
+
+<%= render 'shared/footer' %>
+
+<script type="text/javascript">
+
+  // $('.category-checkbox').click( () => {
+
+  //   var categories = getFilterIds('categories')
+  //   var gender = getFilterIds('gender')
+  //   console.log(categories);
+
+  //   $.ajax({
+  //     url: `/products`,
+  //     method: "get",
+  //     data: { categories: categories, gender: gender },
+  //     dataType: 'json',
+  //     success: function(products) {
+  //       // debugger
+  //       $('.filter').empty();
+  //       products.forEach(append_filtered_product)
+  //     },
+  //     error: function() {
+  //       console.log("Ajax request error");
+  //     },
+  //     // async: true => By default JQuery set true to async param.
+  //   });
+  // })
+  window.onbeforeunload = function() {
+    alert()
+  };
+
+  $('.category-checkbox').click(filterHandler)
+  $('.gender').click(filterHandler)
+
+  function filterHandler (e) {
+    var categories = getFilterIds('categories')
+    var gender = getFilterIds('gender')
+
+    $.ajax({
+      // enctype: 'products/form-data',
+      url: `/products.js`,
+      type: "get",
+      data: {product: {categories: categories, gender: gender} },
+      // dataType: 'js'
+      // success: function(product) {
+      // console.log(product);
+      //   // debugger
+      //   // $('.filter').empty();
+      //   // products.forEach(append_filtered_product)
+      // },
+      // error: function() {
+      //   console.log("Ajax request error");
+      // },
+      // async: true => By default JQuery set true to async param.
+    });
+  }
+
+  function getFilterIds (filterName) {
+    var idsArray = $(`input[name="${filterName}"][type="checkbox"]:checked`).map(function() {
+      return $(this).val();
+    }).get()
+
+    return idsArray || []
+  }
+
+ 
+</script>
+
