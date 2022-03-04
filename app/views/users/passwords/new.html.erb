@@ -2,7 +2,7 @@
     <%= render 'shared/navbar'%>
   </header>
 <section>
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_for(resource, as: resource_name,validate: true, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <div class="forgot-main d-flex align-items-center">
     <div class="row forgot-form-area mx-auto">
       <div class="col-lg-6 col-md-8 col-sm-12 forgot-form p-0">

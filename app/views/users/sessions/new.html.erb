@@ -1,6 +1,6 @@
     <%= render 'shared/navbar'%>
 <section>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, validate: true, url: session_path(resource_name))  do |f| %>
   <div class="sign-main d-flex align-items-center">
     <div class="row sign-form-area mx-auto">
       <div class="col-lg-6 col-md-8 col-sm-12 sign-form p-0">
@@ -15,8 +15,8 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="sign-in-content d-flex flex-column">
-              <%= f.text_field :email, placeholder:"Email Address/Phone No.", class:"form-control-1"  %>
-              <%= f.password_field :password, placeholder:"Password", class:"form-control-1"  %>
+                <%= f.email_field :email, placeholder:"Email Address", class:"form-control-1"  %>
+                <%= f.password_field :password, placeholder:"Password", class:"form-control-1" %>
             </div>
             <div class="forgot-pw text-end f-18">
               <a href="/users/password/new">Forgot Password?</a>
@@ -36,10 +36,5 @@
 </section>
 
 
-<%= javascript_include_tag 'sign'%>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#new_user').validate();
-  })
-</script>
+
