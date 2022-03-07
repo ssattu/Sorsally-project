@@ -21,17 +21,17 @@
           <div class="sign-up">
             <div class="sign-up-content d-flex flex-column">
               <div class="sign-up-name d-flex justify-content-between">
-              <%= f.text_field :first_name, placeholder:"First Name",class:"form-control-1", style:"width: 48.5%;" %>
-              <%= f.text_field :last_name, placeholder:"Last Name",class:"form-control-1",  style:"width: 48.5%;" %>
+              <%= f.text_field :first_name, placeholder:"First Name",class:"form-control-1" %>
+              <%= f.text_field :last_name, placeholder:"Last Name",class:"form-control-1" %>
               </div>
               <div class="sign-up-name d-flex justify-content-between">
-              <%= f.select :country, options_for_select(CS.countries.map{ |c| [c[1], c[1]]},selected: [:India]), default: 'United States' , selected:"India",class:"form-control-1",  style:"width: 48.5%;" %>
-              <%= f.text_field :zip_code, placeholder:"Zip Code",class:"form-control-1",  style:"width: 48.5%;" %>
+              <%= f.select :country, options_for_select(CS.countries.map{ |c| [c[1], c[1]]},selected: [:India]), default: 'United States' , selected:"India",class:"form-control-1" %>
+              <%= f.text_field :zip_code, placeholder:"Zip Code",class:"form-control-1" %>
               </div>
-              <%= f.text_field :contact, placeholder:"Phone number",class:"form-control-1",  style:"width: 100%;" %>
-              <%= f.email_field :email, placeholder:"Email Address", class:"form-control-1"  ,  style:"width: 100%;"%>
-              <%= f.password_field :password, placeholder:"New Password",class:"form-control-1",  style:"width: 100%;" %>
-              <%= f.password_field :password_confirmation, placeholder:"Confirm Password" ,class:"form-control-1",  style:"width: 100%;"%>
+              <%= f.text_field :contact, placeholder:"Phone number",class:"form-control-1" %>
+              <%= f.email_field :email, placeholder:"Email Address", class:"form-control-1"%>
+              <%= f.password_field :password, placeholder:"New Password",class:"form-control-1" %>
+              <%= f.password_field :password_confirmation, placeholder:"Confirm Password" ,class:"form-control-1"%>
             </div>
             <div class="sign-in-button text-center">
                   <%= f.submit "Sign up",class:"btn text-white text-center p-0 f-20 fw-bold", style:"font-size: 20px;" %>

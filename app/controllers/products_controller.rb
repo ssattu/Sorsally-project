@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
 
 
 
+
     # @products = Product.Product.paginate(page: params[:page], per_page: 9)
     # if categories_ids.present? || gender_ids.present?
     #   @products = Product.where(category_id: categories_ids).paginate(page: params[:page], per_page: 9) if categories_ids.present?
@@ -44,7 +45,20 @@ class ProductsController < ApplicationController
     # @categories = Category.all
   end
 
+    def create 
+      @product = Product.new(p_params)
+    # if @product.present?
+    #   @product.update(deleted:false)
+    # else
+      @product.save
+    # end
+      redirect_to products_path notice: "Products added Successfully"
+    end
   def show
+  end
+
+  def new
+    @book = Product.new
   end
 
   private
@@ -70,5 +84,9 @@ class ProductsController < ApplicationController
     category ||= params[:categories].split(",") if params[:categories].present?
   rescue
     []
+  end
+
+  def p_params
+    params.require(:product).permit( :name, :price, :gender, :color, :quantity, :description, :images)
   end
 end

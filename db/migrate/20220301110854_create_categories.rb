@@ -6,8 +6,8 @@ class CreateCategories < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
-  def change
-    drop_table :products
-  end
+  # def change
+  #   drop_table :products
+  # end
   
 end

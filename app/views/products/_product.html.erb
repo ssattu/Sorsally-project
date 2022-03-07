@@ -9,7 +9,7 @@
     <div class="hovereffect"> 
       <div class="products">
         <div class="product">
-          <a href="/products/show"> <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-1.png", alt:"", class:"w-100" %></a>      
+          <a href="/products/show"> <%#= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-1.png", alt:"", class:"w-100" %> <%= product.images %></a>      
           <div class="product-name">
             <h3 class="f-18 text-center"><%= product.name%></h3>
             <h2 class="f-24 text-center"><%= price(product)%></h2>
