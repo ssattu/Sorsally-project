@@ -1,0 +1,33 @@
+<section class="d-block m-auto d-flex justify-content-center">
+<%= form_with model: @product, url: products_path, method: :post , id:'form'  do |form| %>
+    <div class="m-4">
+        
+
+        <%= form.label :name, "Name :"%><br>
+        <%= form.text_field :name , class:'input form-control', id: "book_title"%><br>
+        
+        <%= form.label :color, "color :"%><br>
+        <%= form.text_field :color , class:'input form-control', id: "book_title"%><br>
+        
+        <%= form.label :quantity, "Quantity :"%><br>
+        <%= form.text_field :quantity , class:'input form-control', id: "book_title"%><br>
+        
+        <%= form.label :price, "Price :"%><br>
+        <%= form.text_field :price , class:'input form-control', id: "book_title"%><br>
+        
+        <%= form.label :description , "Description :"%><br>
+        <%= form.text_area :description , size: 100*5, class:'input form-control' %><br>
+
+        <%= form.label :gender , "Gender :"%><br>
+        <%= form.text_area :gender , size: 100*10, class:'input form-control' %><br>
+
+        <%= form.label :image, "Upload File :"%><br>
+        <%= form.file_field :image , class:'form-control'%><br>
+
+        <div class="d-flex justify-content-center m-3">
+            <%= link_to "Back", :back, class:"btn btn-secondary m-3" %>
+            <input type="submit" class="btn-secondary btn submit m-3" value="Upload" id="btn"></input><br>
+        </div>
+    </div>
+</section>
+<%end%>
