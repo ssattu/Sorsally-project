@@ -1,28 +1,36 @@
+<%= render 'shared/navbar'%>
 <section class="d-block m-auto d-flex justify-content-center">
-<%= form_with model: @product, url: products_path, method: :post , id:'form'  do |form| %>
+<%= form_with model: @product, url: products_path, method: :post  do |form| %>
     <div class="m-4">
         
 
         <%= form.label :name, "Name :"%><br>
-        <%= form.text_field :name , class:'input form-control', id: "book_title"%><br>
+        <%= form.text_field :name , class:'input form-control'%><br>
         
         <%= form.label :color, "color :"%><br>
-        <%= form.text_field :color , class:'input form-control', id: "book_title"%><br>
+        <%= form.text_field :color , class:'input form-control'%><br>
         
         <%= form.label :quantity, "Quantity :"%><br>
-        <%= form.text_field :quantity , class:'input form-control', id: "book_title"%><br>
+        <%= form.text_field :quantity , class:'input form-control'%><br>
         
         <%= form.label :price, "Price :"%><br>
-        <%= form.text_field :price , class:'input form-control', id: "book_title"%><br>
+        <%= form.text_field :price , class:'input form-control'%><br>
+
+        <%= form.label :category_id, "Category :"%><br>
+        <%= form.select :category_id ,  Category.all.collect{|c| [c.name, c.id]}, class:'input form-control'%><br>
         
         <%= form.label :description , "Description :"%><br>
         <%= form.text_area :description , size: 100*5, class:'input form-control' %><br>
 
-        <%= form.label :gender , "Gender :"%><br>
-        <%= form.text_area :gender , size: 100*10, class:'input form-control' %><br>
+        <%= form.label :gender , "Gender :"%>
+        <%= form.radio_button :gender, "women" %>
+        <%= form.label :gender, "Women" %>
+        <%= form.radio_button :gender, "men" %>
+        <%= form.label :gender, "Men" %>
+        <br>
 
-        <%= form.label :image, "Upload File :"%><br>
-        <%= form.file_field :image , class:'form-control'%><br>
+        <%= form.label :images, "Upload File :"%><br>
+        <%= form.file_field :images , class:'form-control'%><br>
 
         <div class="d-flex justify-content-center m-3">
             <%= link_to "Back", :back, class:"btn btn-secondary m-3" %>
@@ -31,3 +39,4 @@
     </div>
 </section>
 <%end%>
+<%= render 'shared/footer' %>

@@ -76,28 +76,6 @@
 
 <script type="text/javascript">
 
-  // $('.category-checkbox').click( () => {
-
-  //   var categories = getFilterIds('categories')
-  //   var gender = getFilterIds('gender')
-  //   console.log(categories);
-
-  //   $.ajax({
-  //     url: `/products`,
-  //     method: "get",
-  //     data: { categories: categories, gender: gender },
-  //     dataType: 'json',
-  //     success: function(products) {
-  //       // debugger
-  //       $('.filter').empty();
-  //       products.forEach(append_filtered_product)
-  //     },
-  //     error: function() {
-  //       console.log("Ajax request error");
-  //     },
-  //     // async: true => By default JQuery set true to async param.
-  //   });
-  // })
   window.onbeforeunload = function() {
     alert()
   };
@@ -110,21 +88,10 @@
     var gender = getFilterIds('gender')
 
     $.ajax({
-      // enctype: 'products/form-data',
-      url: `/products.js`,
+      url: `/products`,
       type: "get",
+      dataType: 'script',
       data: {product: {categories: categories, gender: gender} },
-      // dataType: 'js'
-      // success: function(product) {
-      // console.log(product);
-      //   // debugger
-      //   // $('.filter').empty();
-      //   // products.forEach(append_filtered_product)
-      // },
-      // error: function() {
-      //   console.log("Ajax request error");
-      // },
-      // async: true => By default JQuery set true to async param.
     });
   }
 
@@ -135,7 +102,5 @@
 
     return idsArray || []
   }
-
- 
 </script>
 
