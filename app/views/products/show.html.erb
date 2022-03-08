@@ -131,17 +131,17 @@
         <div class="product-selection-text d-flex">
           <p class="f-20 my-0">Quantity</p>
         </div>
-        <div class="product-options message quantity">
-        <input class="product-message" type="text" id="message" placeholder="Enter quantity..." />
+        <div class="product-options message1 quantity">
+        <input class="product-message1" type="text" id="message1" placeholder="Enter quantity..." />
       </div>
     </div>
-    <!-- Message -->
+    <!-- Message1 -->
     <div class="product-selection selection-type-quantity d-flex align-items-center">
       <div class="product-selection-text d-flex">
         <p class="f-20 my-0">Message</p>
       </div>
-      <div class="product-options message">
-        <input class="product-message" type="text" id="message" placeholder="Type here..." />
+      <div class="product-options message1">
+        <input class="product-message1" type="text" id="message1" placeholder="Type here..." />
       </div>
     </div>
     <!-- Send Query -->
@@ -294,14 +294,14 @@
         </ul>
       </div>
     </div>
-    <!-- Message -->
+    <!-- Message1 -->
     <div class="product-selection selection-type-quantity d-flex align-items-center">
       <div class="product-selection-text d-flex">
         <p class="f-20 my-0">Message</p>
       </div>
-      <span class="product-options message">
-        <input class="product-message" type="text" id="message" placeholder="Type here..." />
-      </span>
+      <div class="product-options message1">
+        <input class="product-message1" type="text" id="message1" placeholder="Type here..." />
+      </div>
     </div>
     <!-- Send Query -->
     <div class="float-end">
@@ -315,7 +315,33 @@
 </div>
 </div>
 </section>
-
-
-
 <%= render 'shared/footer' %>
+
+<!-- <script type="text/javascript">
+  // Modal Js
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+  // console.log(modal.classList)
+  modal.classList.toggle("show-modal");
+}
+function windowOnClick(event) {
+  if (event.target === modal) {
+    // console.log(event);
+    toggleModal();
+  }
+}
+function escapeBtn(event){
+  // console.log(event.key)
+  if(event.key === 'Escape' && modal.classList.contains('show-modal')){
+    toggleModal();
+  } 
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+window.addEventListener("keydown", escapeBtn);s
+</script> -->

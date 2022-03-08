@@ -180,10 +180,10 @@
 .product-options.size :checked + label div, .product-options.quantity :checked + label div, .product-options-modal.size :checked + label div, .product-options-modal.quantity :checked + label div{
 	color: var(--primary-color);
 }
-.product-options.message, .product-options-modal.message{
+.product-options.message1, .product-options-modal.message1{
 	margin-left: 24px;
 }
-.product-options.message input, .product-options-modal.message input{
+.product-options.message1 input, .product-options-modal.message1 input{
 	outline: none !important;
 	border: none !important;
 }
@@ -239,7 +239,7 @@ select:focus{
 .product-options{
 	width: 75%;
 }
-.product-message{
+.product-message1{
 	width: 100%;
 }
 

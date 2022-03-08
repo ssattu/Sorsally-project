@@ -16,7 +16,8 @@
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="sign-in-content d-flex flex-column">
                 <%= f.email_field :email, placeholder:"Email Address", class:"form-control-1"  %>
-                <%= f.password_field :password, placeholder:"Password", class:"form-control-1" %>
+                <%= f.password_field :password, placeholder:"Password", class:"form-control-1", id:"password" %>
+                <i class="toggle-password bi bi-eye-slash" id="togglePassword"></i>
             </div>
             <div class="forgot-pw text-end f-18">
               <a href="/users/password/new">Forgot Password?</a>
@@ -34,7 +35,18 @@
   </div>
 <% end %>
 </section>
+<script type="text/javascript">
+  const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
 
+</script>
 
 
 

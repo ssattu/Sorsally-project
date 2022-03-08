@@ -30,8 +30,10 @@
               </div>
               <%= f.text_field :contact, placeholder:"Phone number",class:"form-control-1" %>
               <%= f.email_field :email, placeholder:"Email Address", class:"form-control-1"%>
-              <%= f.password_field :password, placeholder:"New Password",class:"form-control-1" %>
-              <%= f.password_field :password_confirmation, placeholder:"Confirm Password" ,class:"form-control-1"%>
+              <%= f.password_field :password, placeholder:"New Password",class:"form-control-1", id:"password-1"%>
+                  <i class="toggle-password-1 bi bi-eye-slash" id="togglePassword-1"></i>
+              <%= f.password_field :password_confirmation, placeholder:"Confirm Password" ,class:"form-control-1", id:"password-2"%>
+                  <i class="toggle-password-2 bi bi-eye-slash" id="togglePassword-2"></i>
             </div>
             <div class="sign-in-button text-center">
                   <%= f.submit "Sign up",class:"btn text-white text-center p-0 f-20 fw-bold", style:"font-size: 20px;" %>
@@ -47,8 +49,24 @@
 <% end %>
 </section>
 
-<!-- <script type="text/javascript">
-  $(document).ready(function(){
-    $('#new_form').validate();
-  })
-</script> -->
+<script type="text/javascript">
+  const togglePassword1 = document.querySelector("#togglePassword-1");
+        const password1 = document.querySelector("#password-1");
+        togglePassword1.addEventListener("click", function () {
+            // toggle the type attribute
+            const type1 = password1.getAttribute("type") === "password" ? "text" : "password";
+            password1.setAttribute("type", type1);
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+  const togglePassword2 = document.querySelector("#togglePassword-2");
+        const password2 = document.querySelector("#password-2");
+        togglePassword2.addEventListener("click", function () {
+            // toggle the type attribute
+            const type2 = password2.getAttribute("type") === "password" ? "text" : "password";
+            password2.setAttribute("type", type2);
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+</script>
+
