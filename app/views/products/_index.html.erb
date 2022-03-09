@@ -1,4 +1,3 @@
-<%= render 'shared/navbar'%>
 <section id="my-product">
   <div class="product-list-main">
     <div class="products-container mx-auto">
@@ -41,7 +40,7 @@
                   <div class="form-check">
                     <% @categories.each do |category| %>
                       <div class="form-check">
-                        <input class="form-check-input category-checkbox" name="categories" type="checkbox" id="<%= category.id %>", value="<%= category.id %>", autocomplete="off" />
+                        <input class="form-check-input category-checkbox save-cb-state"  name="categories" type="checkbox" id="<%= category.id %>", value="<%= category.id %>" />
                         <label class="form-check-label" for="<%= category.id%>">
                           <%= category.name %>
                         </label>
@@ -72,7 +71,7 @@
 
 </section>
 
-<%= render 'shared/footer' %>
+<%= render 'shared/footer'%>
 
 <script type="text/javascript">
 
@@ -84,7 +83,9 @@
   $('.gender').click(filterHandler)
 
   function filterHandler (e) {
-    var categories = getFilterIds('categories')
+    var cb = document.getElementsByClassName('save-cb-state');
+    for(var i = 0; i < cb.length; i++) {
+    var categories = getFilterIds("categories")}
     var gender = getFilterIds('gender')
 
     $.ajax({
@@ -103,4 +104,75 @@
     return idsArray || []
   }
 </script>
+<!-- <script>
+// Avoid scoping issues by encapsulating code inside anonymous function
+(function() {
+  // variable to store our current state
+  var cbstate;
+  
+  // bind to the onload event
+  window.addEventListener('load', function() {
+    // Get the current state from localstorage
+    // State is stored as a JSON string
+    cbstate = JSON.parse(localStorage['CBState'] || '{}');
+  
+    // Loop through state array and restore checked 
+    // state for matching elements
+    for(var i in cbstate) {
+      var el = document.querySelector('input[value="' + i + '"]');
+      if (el) el.checked = true;
+    }
+  
+    // Get all checkboxes that you want to monitor state for
+    var cb = document.querySelectorAll('.save-cb-state');
+  
+    // Loop through results and ...
+    for(var i = 0; i < cb.length; i++) {
+  
+      //bind click event handler
+      cb[i].addEventListener('click', function(evt) {
+        // If checkboxe is checked then save to state
+        if (this.checked) {
+          cbstate[this.name] = true;
+        }
+    
+    // Else remove from state
+        else if (cbstate[this.name]) {
+          delete cbstate[this.name];
+        }
+    
+    // Persist state
+        localStorage.CBState = JSON.stringify(cbstate);
+      });
+    }
+  });
+})();
+</script>
+ -->
+<!-- 
+<script> 
+  var cb = $('.category-checkbox').length;
+  var i = 1
+    // Loop through results and ...
+  for( i = 1; i <= cb; i++) {
+    $( window ).on( "load",function() {
+      console.log('ready function')     
+      document.querySelector('input[id="' + i + '"]').checked = localStorage.checked 
+    }); 
 
+    console.log(12)
+    $('input[id="' + i + '"]').click(check)
+
+  }
+
+  function check(e){ 
+        console.log('checked function')
+      if (e.target.checked) { 
+        localStorage.checked = true; 
+      } else { 
+        localStorage.checked = false; 
+      } 
+  } 
+     
+
+</script>  -->

@@ -1,0 +1,43 @@
+<% if user_signed_in? && current_user.is_admin? %>
+<section class="d-block m-auto d-flex justify-content-center">
+<%= form_with model: @product, url: @action == 'edit' ? new_product_path : products_path, method: @action=='edit' ? :patch : :post  do |form| %>
+    <div class="m-4">
+        
+
+        <%= form.label :name, "Name :"%><br>
+        <%= form.text_field :name , class:'input form-control'%><br>
+        
+        <%= form.label :color, "color :"%><br>
+        <%= form.text_field :color , class:'input form-control'%><br>
+        
+        <%= form.label :quantity, "Quantity :"%><br>
+        <%= form.text_field :quantity , class:'input form-control'%><br>
+        
+        <%= form.label :price, "Price :"%><br>
+        <%= form.text_field :price , class:'input form-control'%><br>
+
+        <%= form.label :category_id, "Category :"%><br>
+        <%= form.select :category_id ,  Category.all.collect{|c| [c.name, c.id]}, class:'input form-control'%><br>
+        
+        <%= form.label :description , "Description :"%><br>
+        <%= form.text_area :description , size: 100*5, class:'input form-control' %><br>
+
+        <%= form.label :gender , "Gender :"%>
+        <%= form.radio_button :gender, "women" %>
+        <%= form.label :gender, "Women" %>
+        <%= form.radio_button :gender, "men" %>
+        <%= form.label :gender, "Men" %>
+        <br>
+
+        <%= form.label :images, "Upload File :"%><br>
+        <%= form.file_field :images , class:'form-control'%><br>
+
+        <div class="d-flex justify-content-center m-3">
+            <%= link_to "Back", :back, class:"btn btn-secondary m-3" %>
+            <input type="submit" class="btn-secondary btn submit m-3" value="Upload" id="btn"></input><br>
+        </div>
+    </div>
+</section>
+<%end%>
+
+<% end %>

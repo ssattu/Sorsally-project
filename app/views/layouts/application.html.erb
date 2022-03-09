@@ -54,6 +54,14 @@
 
   <body>
     <div id="content">
+     <% if current_page?(root_path) %>      
+      <%= render 'shared/header'%>
+    <% end %>
+
+       <%= render '/shared/navbar' %>
+     <% if notice %>
+      <%= render 'shared/alert' %>
+    <% end %>
     <%= yield %>
     </div>
   
