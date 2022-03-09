@@ -17,3 +17,5 @@
 	Product.create!(name:"Jackets", description:"lorem_ipsum", price:200.50, gender:"men", category_id:Category.find_by(name:"Jackets").id, quantity:50)
 	Product.create!(name:"T-Shirts", description:"lorem_ipsum", price:250.50, gender:"men", category_id:Category.find_by(name:"T-Shirts").id, quantity:50)
 }
+
+User.create!(first_name:"Admin", last_name:"Sorsally", email:"admin@sorsally.com", password:"admin@S123", zipcode:"110048", country:"India", contact:"9958527662", is_admin:"true")
