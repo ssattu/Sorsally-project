@@ -1,0 +1,37 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.status-button{
+	/* padding: 9% 15%; */
+	border-radius: 50%;
+	text-align: center;
+}
+.active-status{
+	    color: #06bc06 !important;
+}
+.inactive-status{
+	    color: #e04f5f !important;
+}
+.user-detail-table td{
+	padding: 2% 1%!important;
+}
+.form-check-input{
+	box-shadow: none !important;
+	border-color: green !important;
+	cursor: pointer;
+}
+.form-check-input:checked {
+	background-color: #ff4242 !important;
+	border-color: #ff4242 !important;
+}
+.user-details-icon{
+	width: 10%;
+}
+.user-detail-icon{
+	    width: 34% !important;
+}
+.action-button{
+	    margin-right: 15%;
+}

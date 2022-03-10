@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   get 'categories/show'
   delete 'products/:id', to: "products#destroy", as: "delete_product"
   devise_for :users
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   resources :about_us
   resources :products
   resources :categories
+  get 'users/:id', to: "users#activate", as: "activate_user"
+  resources :users
 
   get 'products', to: 'products#index'
 end

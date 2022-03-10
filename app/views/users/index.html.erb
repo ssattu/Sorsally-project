@@ -1,0 +1,56 @@
+<% if user_signed_in? && current_user.is_admin? %>
+<section class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Contact</th>
+					<th scope="col">Status</th>
+					<th scope="col">Date of Joining</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @users.each do |user| %>
+				<tr class="user-detail-table">
+					<td scope="row"><%= user.id %></td>
+					<td><%= user.first_name %></td>
+					<td><%= user.email %></td>
+					<td><%= user.contact %></td>
+					<td>
+						<p class="text-decoration-none fw-bold status-button inactive-status"><%= user.status%></p>
+						<!-- <p  class="text-decoration-none fw-bold status-button d-none inactive">Inactive</p> -->
+					</td>
+					<td><%= user.created_at %></td>
+					<td class="user-details-icon">
+						<div class="action-button">
+							
+						  <a href="<%=  activate_user_path(user.id)%>",  data-method="get"> 
+					     <%= image_tag "#{ENV['BUCKET_URL']}check.png",class:"check-icon user-detail-icon me-3", alt:"" %>
+					   </a>
+						  <a href="<%= user_path(user.id)%>",  data-method="delete"> 
+					     <%= image_tag "#{ENV['BUCKET_URL']}icons8-close-64.png",class:"cross-icon user-detail-icon", alt:"" %>
+					   </a>
+					   
+					 </div>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</section>
+	<% end %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".check-icon").click(function(){
+    console.log("e.type");
+    $(".status-button").addClass("active-status")	;
+  });
+  $(".cross-icon").click(function(){
+    console.log("e.type");
+    $(".status-button").removeClass("active-status")	;
+  });
+});
+</script>
