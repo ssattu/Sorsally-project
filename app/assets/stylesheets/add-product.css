@@ -1,0 +1,32 @@
+.add-product-page{
+  height: calc(100vh - 88px);
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+}
+.add-product-page::before{
+	content: '';
+	z-index: -1;
+	background: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/add-product-bg.jpg');
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* opacity: 0.3; */
+	height: 100vh;
+	width: 100vw;
+}
+.add-product-form label{
+	    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.add-product-form select{
+	    width: 100%;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #fff;
+}
+.add-product-form .gender-options{
+	width: 50%;
+}

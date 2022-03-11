@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.where(is_admin: false).order(:id)
+    @users = User.where(is_admin: false).order(:id).paginate(page: params[:page] || 1, per_page: 5)
   end
 
   def destroy
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
           @user.update(status: "Inactive")
         end
       end
-      redirect_to users_path notice: "User set to Inactive"
+      redirect_to users_path, notice: "#{@user.first_name} is Inactive"
    
   end
 
@@ -23,6 +23,6 @@ class UsersController < ApplicationController
           @user.update(status: "Active")
         end
       end
-      redirect_to users_path notice: "User set to Active"
+      redirect_to users_path, notice: "#{@user.first_name} is Active"
   end
 end

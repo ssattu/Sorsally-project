@@ -15,7 +15,7 @@
 	    color: #e04f5f !important;
 }
 .user-detail-table td{
-	padding: 2% 1%!important;
+	padding-top: 2%!important;
 }
 .form-check-input{
 	box-shadow: none !important;
@@ -30,8 +30,13 @@
 	width: 10%;
 }
 .user-detail-icon{
-	    width: 34% !important;
+	    width: 35% !important;
 }
-.action-button{
-	    margin-right: 15%;
+.action-button button{
+	    background: #fff;
+    border: none;
+    width: 100%;
+}
+.cross{
+	display: none;
 }

@@ -758,3 +758,10 @@
 .ownership-svg-inactive{
   fill: #d2edfc;
 }
+.alert{
+      position: fixed !important;
+    /* top: 100%; */
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+}

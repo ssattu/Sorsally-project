@@ -4,5 +4,6 @@
 //= link_tree ../../../vendor/javascript .js
 //= link slider.js
 //= link sign.js
+//= link delete.js
 //= link gallery.js
 //= link product-details.js

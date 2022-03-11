@@ -38,12 +38,12 @@ class ProductsController < ApplicationController
 
   def edit
     @action ='edit'
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
 
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
     
     if @product.update(b_params) 
       redirect_to products_path, notice: "Product is Updated Successfully"
@@ -53,11 +53,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
     @product.destroy
     # debugger
     # @product.update(deleted: true)

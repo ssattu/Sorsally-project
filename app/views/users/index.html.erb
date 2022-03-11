@@ -16,23 +16,23 @@
 				<% @users.each do |user| %>
 				<tr class="user-detail-table">
 					<td scope="row"><%= user.id %></td>
-					<td><%= user.first_name %></td>
+					<td><%= full_name(user) %></td>
 					<td><%= user.email %></td>
 					<td><%= user.contact %></td>
 					<td>
 						<p class="text-decoration-none fw-bold status-button inactive-status"><%= user.status%></p>
 						<!-- <p  class="text-decoration-none fw-bold status-button d-none inactive">Inactive</p> -->
 					</td>
-					<td><%= user.created_at %></td>
+					<td><%= user.created_at.strftime('%B %d, %Y') %></td>
 					<td class="user-details-icon">
-						<div class="action-button">
+						<div class="action-button d-flex">
 							
-						  <a href="<%=  activate_user_path(user.id)%>",  data-method="get"> 
-					     <%= image_tag "#{ENV['BUCKET_URL']}check.png",class:"check-icon user-detail-icon me-3", alt:"" %>
-					   </a>
-						  <a href="<%= user_path(user.id)%>",  data-method="delete"> 
+						  <button class=" text-start" href="<%=  activate_user_path(user.id)%>",  data-method="get" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"> 
+					     <%= image_tag "#{ENV['BUCKET_URL']}check.png",class:"check-icon user-detail-icon", alt:"" %>
+					   </button>
+						  <button class="cross text-start" href="<%= user_path(user.id)%>",  data-method="delete" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"> 
 					     <%= image_tag "#{ENV['BUCKET_URL']}icons8-close-64.png",class:"cross-icon user-detail-icon", alt:"" %>
-					   </a>
+					   </button>
 					   
 					 </div>
 						</td>
@@ -40,8 +40,34 @@
 					<% end %>
 				</tbody>
 			</table>
+			<div class="d-flex justify-content-center">
+          <%= will_paginate @products, :container =>false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer , :previous_label => '<i class="ri-arrow-left-s-line"></i>', :next_label => '<i class="ri-arrow-right-s-line"></i>',inner_window: 1, outer_window: 1, remote:false %>
+      </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 		</section>
 	<% end %>
+<%= javascript_include_tag "delete" %>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $(".check-icon").click(function(){

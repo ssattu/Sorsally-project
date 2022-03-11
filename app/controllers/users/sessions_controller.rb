@@ -9,9 +9,14 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    debugger
+     if (User.find_by(email: "#{params[:user][:email]}").status == 'Active')
+      super
+    else
+     redirect_to new_user_registration_path 
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
