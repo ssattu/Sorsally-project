@@ -58,13 +58,13 @@
   display: block;
 }
 
-.clients .slick-track:before,
-.clients .slick-track:after {
+.clients .slick-track::before,
+.clients .slick-track::after {
   display: table;
   content: "";
 }
 
-.clients .slick-track:after {
+.clients .slick-track::after {
   clear: both;
 }
 
@@ -762,6 +762,7 @@
       position: fixed !important;
     /* top: 100%; */
     z-index: 10;
-    bottom: 0;
+    /* bottom: 0; */
     right: 0;
+    top: 15%;
 }

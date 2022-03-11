@@ -10,9 +10,11 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    debugger
-     if (User.find_by(email: "#{params[:user][:email]}").status == 'Active')
+    # debugger
+    if (User.find_by(email: "#{params[:user][:email]}").status == 'Active')
       super
+    elsif (User.find_by(email: "#{params[:user][:email]}").status == 'Inactive')
+      redirect_to root_path, notice: "You have been Diabled by Admin, Please contact Admin"
     else
      redirect_to new_user_registration_path 
     end

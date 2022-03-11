@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.where(is_admin: false).order(:id).paginate(page: params[:page] || 1, per_page: 5)
+    @users = User.where(is_admin: false).order(:id).paginate(page: params[:page] || 1, per_page: 10)
   end
 
   def destroy
-      @user = User.find(params[:id])
+      @user = User.find_by(id: params[:id])
       if current_user.is_admin? 
         # debugger
         if @user.status == "Active"
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def activate
-      @user = User.find(params[:id])  
+      @user = User.find_by(id: params[:id])  
       if current_user.is_admin? 
         # debugger
         if @user.status == "Inactive"

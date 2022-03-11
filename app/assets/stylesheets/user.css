@@ -30,13 +30,12 @@
 	width: 10%;
 }
 .user-detail-icon{
-	    width: 35% !important;
+	    width: 60% !important;
 }
-.action-button button{
-	    background: #fff;
-    border: none;
+.action-button a{
     width: 100%;
 }
-.cross{
-	display: none;
-}
+	/* .cross{
+		display: none;
+	}
+ */
