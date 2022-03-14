@@ -1,59 +1,178 @@
 <% if user_signed_in? && current_user.is_admin? %>
-<div class="add-product-page">
-    <section class="d-block m-auto d-flex justify-content-center">
     <%= form_with model: @product, url: @action == 'edit' ? new_product_path : products_path, method: @action=='edit' ? :patch : :post  do |form| %>
-        <div class="m-4 add-product-form">
-            
+<section>
+  <div class="product-details">
+    <div class="row mx-0">
+      <div class="col-lg-6 col-md-12 col-sm-12 px-lg-0 d-flex justify-content-end">
+        <div class="product-main-image">
+          <img id="img_prev" src="#" alt=" Image preview" class="d-block w-100" />
 
-            <%= form.label :name, "Name "%><br>
-            <%= form.text_field :name , class:'input form-control'%><br>
+          <%#= form.hidden_field :image_cache %>
+        </div>
+        
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
+        <div class="product-content">
+            <%= form.file_field :images , class:'form-control', placeholder:"Image", onchange:"readURL(this);", id:"img_prev"%><br>
+            <%= form.text_field :name , class:'input form-control', placeholder:"Name"%><br>
             
-            <%= form.label :color, "color "%><br>
-            <%= form.text_field :color , class:'input form-control'%><br>
-            
-            <%= form.label :quantity, "Quantity "%><br>
-            <%= form.text_field :quantity , class:'input form-control'%><br>
-            
-            <%= form.label :price, "Price "%><br>
-            <%= form.text_field :price , class:'input form-control'%><br>
+          <h1 class="product-heading"><%= @product.name%></h1>
+            <%= form.text_field :price , class:'input form-control', placeholder:"Price"%><br>
+          <!-- <h3 class="product-price">$24.95-$249.5</h3> -->
+          
+            <%= form.text_area :description , size: 100*5, class:'input form-control', placeholder:'Description' %>
 
-            <%= form.label :category_id, "Category "%><br>
-            <%= form.select :category_id ,  Category.all.collect{|c| [c.name, c.id]}, class:'input form-control'%><br><br>
-            
-            <%= form.label :description , "Description "%><br>
-            <%= form.text_area :description , size: 100*5, class:'input form-control' %><br>
-            <div class="d-flex justify-content-between">
-                <div>
-                    <%= form.label :gender , "Gender "%>
-                </div>
-                <div class="gender-options">
-                    <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                    <%= form.radio_button :gender, "women" %>
-                    <%= form.label :gender, "Women" %>
-                        
-                    </div>
-                    <div>
-                    <%= form.radio_button :gender, "men" %>
-                    <%= form.label :gender, "Men" %>
-                        
-                    </div>
-                        
-                    </div>
-                </div>
+          <!-- Color -->
+          <div class="product-selection selection-type-color d-flex align-items-center">
+            <div class="product-selection-text d-flex">
+              <%= form.label :color, "Color "%><br>
+              <!-- <p class="f-20 my-0">Color</p> -->
             </div>
-            <br>
-
-            <%= form.label :images, "Upload File "%><br>
-            <%= form.file_field :images , class:'form-control'%><br>
-
-            <div class="d-flex justify-content-center m-3">
-                <%= link_to "Back", :back, class:"btn btn-secondary m-3" %>
-                <input type="submit" class="btn-secondary btn submit m-3" value="Update" id="btn"></input><br>
+            <div class="product-options color">
+             <ul class="my-0">
+              <li>
+                <input type="checkbox" id="color-1" />
+                <label for="color-1"><div class="product-color color-1"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-2" />
+                <label for="color-2"><div class="product-color color-2"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-3" />
+                <label for="color-3"><div class="product-color color-3"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-4" />
+                <label for="color-4"><div class="product-color color-4"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-5" />
+                <label for="color-5"><div class="product-color color-5"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-6" />
+                <label for="color-6"><div class="product-color color-6"></div></label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-7" />
+                <label for="color-7"><div class="product-color color-7"></div></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Size -->
+        <div class="product-selection selection-type-size d-flex align-items-center">
+          <div class="product-selection-text d-flex">
+            <p class="f-20 my-0">Size</p>
+          </div>
+          <div class="product-options size">
+           <ul class="my-0">
+            <li>
+              <input type="checkbox" id="size-1" />
+              <label for="size-1"><div class="product-size">XS</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-2" />
+              <label for="size-2"><div class="product-size">S</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-3" />
+              <label for="size-3"><div class="product-size">M</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-4" />
+              <label for="size-4"><div class="product-size">L</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-5" />
+              <label for="size-5"><div class="product-size">XL</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-6" />
+              <label for="size-6"><div class="product-size">XXL</div></label>
+            </li>
+            <li>
+              <input type="checkbox" id="size-7" />
+              <label for="size-7"><div class="product-size">XXXL</div></label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Quantity -->
+      <div class="product-selection selection-type-quantity d-flex align-items-center">
+        <div class="product-selection-text d-flex">
+         <%= form.label :quantity, "Quantity "%><br>
+        </div>
+        <div class="product-options message1 quantity">
+            <%= form.text_field :quantity , class:'input form-control product-message1', id:'message1', placeholder:'Enter Quantity'%>
+        <!-- <input class="product-message1" type="text" id="message1" placeholder="Enter quantity..." /> -->
+      </div>
+    </div>
+    <!-- Message1 -->
+    <div class="product-selection selection-type-quantity d-flex align-items-center">
+      <div class="product-selection-text d-flex">
+        <!-- <p class="f-20 my-0">Message</p> -->
+        <%= form.label :category_id, "Category "%><br>
+      </div>
+      <div class="product-options message1">
+            <%= form.select :category_id ,  Category.all.collect{|c| [c.name, c.id]}, class:'input form-control'%>
+        <!-- <input class="product-message1" type="text" id="message1" placeholder="Type here..." /> -->
+      </div>
+    </div>
+    <div class="product-selection selection-type-quantity d-flex align-items-center">
+          <div class="product-selection-text" >
+            <%= form.label :gender , "Gender "%>
+            
+          </div>
+        <div class="gender-options">
+            <div class="d-flex  align-items-center">
+            <div class="women-options">
+            <%= form.radio_button :gender, "women" %>
+            <%= form.label :gender, "Women" %>
+                
+            </div>
+            <div class="men-options">
+            <%= form.radio_button :gender, "men" %>
+            <%= form.label :gender, "Men" %>
+                
+            </div>
+                
             </div>
         </div>
-    </section>
+    </div>
+    <!-- Send Query -->
+    <div class="d-flex float-end product-details-call">
+      <%= link_to "Back", :back, class:"btn send-query-button " %>
+      <input type="submit" class="float-end btn-primary" value="Update" id="btn"></input><br>
+    </div>
+  </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <%end%>
 
 <% end %>
+    <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#img_prev')
+              .attr('src', e.target.result)
+              .width(150)
+              .height(200);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>

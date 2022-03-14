@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {sessions: "users/sessions" , registrations: "users/registrations"}
-  
-  
-  get 'categories/show'
-  delete 'products/:id', to: "products#destroy", as: "delete_product"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root "sorsallys#index"
+
+  devise_for :users, controllers: {sessions: "users/sessions" , registrations: "users/registrations"}
   resources :sorsallys
   resources :galleries
   resources :about_us
   resources :products
-  resources :categories
-  get 'users/:id', to: "users#activate", as: "activate_user"
   resources :users
-
+  resources :categories
+  
+  
+  get 'categories/show'
+  delete 'products/:id', to: "products#destroy", as: "delete_product"
+  get 'products/:id/add_image', to: "products#add_image", as: "add_image"
+  get 'users/:id', to: "users#activate", as: "activate_user"
   get 'products', to: 'products#index'
+
 end

@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
 
   def index
+
     @product_filters = params if product_params.present?
       # debugger
     if product_params.present?
@@ -24,15 +25,21 @@ class ProductsController < ApplicationController
     @action ='new'
     current_user.is_admin? ? "#{@product = Product.new()}" : "#{redirect_to products_path}" 
   end
+
+  def add_image
+    # current_user.is_admin? ? "#{@product = Product.new()}" : "#{redirect_to products_path}" 
+    @product = Product.find_by(id: params[:id])
+  end
     
   def create 
+    # debugger
     @product = Product.new(p_params)
     # if@product.present?
     #  @product.update(deleted:false)
     # else
      @product.save
     # end
-    redirect_to new_product_path 
+    redirect_to add_image_path(@product.id) 
 
   end
 
@@ -44,7 +51,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    
+    # debugger
     if @product.update(b_params) 
       redirect_to products_path, notice: "Product is Updated Successfully"
     else

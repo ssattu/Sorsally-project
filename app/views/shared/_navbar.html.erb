@@ -38,7 +38,10 @@
           	</li>
           <% end %>
         </ul>
-        <a class="btn me-0 f-16" href="/products">Get Started</a>
+        <% if !user_signed_in? %>
+        <a class="btn me-0 f-16" href="/users/sign_up">Sign Up</a>
+        <% end %>
+        
       </div>
     </div>
   </nav>
