@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   end
     
   def create 
-    debugger
+    # debugger
     # images ||= params(p_params).split(",")
     @product = Product.new(p_params)
     # if@product.present?
@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    debugger
+    # debugger
     @product = Product.find_by(id: params[:id])
     # debugger
     if @product.update(p_params) 
