@@ -5,12 +5,21 @@
         <div class="product-main-image">
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
+              
+              <div class="carousel-item active h-100 ">
+               <%= image_tag @product.images[0].url,height:"100%", width:"100%" if @product.images[0].url.present? %>
+              </div>
+                <% @product.images.each do |i|%>
+              <div class="carousel-item  h-100">
+               <%= image_tag i.url, width:"100%" if i.url.present? %>
+              </div>
+                <% end %>
+              <!-- <div class="carousel-item active">
+                <%#= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
               </div>
               <div class="carousel-item">
-                <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
-              </div>
+                <%#= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
+              </div> -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -23,31 +32,24 @@
           </div>
         </div>
         <div class="product-small-images-container">
-          <div class="product-small-image d-flex">
-            <div class="images">
-              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
-            </div>
-            <div class="images">
-              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-2.png", alt:"", class:"w-100" %>
-            </div>
-            <div class="images">
-              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
-            </div>
-            <div class="images">
-              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
-            </div>
-            <div class="images">
-              <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-small-1-1.png", alt:"", class:"w-100" %>
+          <div class="product-small-image d-flex row mx-0">
+            
+            <% @product.images.each do |j|%>
+              <div class="images col-lg-3 col-md-4 col-sm-6">
+                 <%= image_tag j.url, width:"100%" if j.url.present? %>
+              </div>
+            <% end %>
+            
             </div>
           </div>
         </div>
-      </div>
       <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
         <div class="product-content">
-          <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>">Black Tank Top</a> </span>
-          <h1 class="product-heading">Black Tank Top</h1>
-          <h3 class="product-price">$24.95-$249.5</h3>
-          <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore as ame magna aliqua.</p>
+           <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>"><%= @product.name %></a> </span>
+          <h1 class="product-heading"><%= @product.name %></h1>
+          <h3 class="product-price"><%= @product.price %></h3>
+          <p class="product-desc"><%= @product.description %></p>
+
 
           <!-- Color -->
           <div class="product-selection selection-type-color d-flex align-items-center">
@@ -93,37 +95,8 @@
             <p class="f-20 my-0">Size</p>
           </div>
           <div class="product-options size">
-           <ul class="my-0">
-            <li>
-              <input type="checkbox" id="size-1" />
-              <label for="size-1"><div class="product-size">XS</div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="size-2" />
-              <label for="size-2"><div class="product-size">S</div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="size-3" />
-              <label for="size-3"><div class="product-size">M</div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="size-4" />
-              <label for="size-4"><div class="product-size">L</div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="size-5" />
-              <label for="size-5"><div class="product-size">XL</div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="size-6" />
-              <label for="size-6"><div class="product-size">XXL</div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="size-7" />
-              <label for="size-7"><div class="product-size">XXXL</div></label>
-            </li>
-          </ul>
-        </div>
+           <%= @product.size%>
+          </div>
       </div>
       <!-- Quantity -->
       <div class="product-selection selection-type-quantity d-flex align-items-center">
@@ -150,6 +123,7 @@
     </div>
   </div>
 </div>
+      </div>
 </div>
 
 

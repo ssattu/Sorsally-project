@@ -3,20 +3,49 @@
   <div class="product-details">
     <div class="row mx-0">
       <div class="col-lg-6 col-md-12 col-sm-12 px-lg-0 d-flex justify-content-end flex-column add-images">
-        <div class="product-main-image  w-100">
-               <%= image_tag @product.images.url, width:"100%" if @product.images_url.present? %>
+        <div class="product-main-image product-main-add-image">
+          <div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active h-100">
+               <%= image_tag @product.images[0].url, height:"100%",width:"100%" if @product.images[0].url.present? %>
+
+              </div>
+                <% @product.images.each do |i|%>
+              <div class="carousel-item  h-100">
+               <%= image_tag i.url,height:"100%",width:"100%" if i.url.present? %>
+
+              </div>
+                <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
         <div class="product-small-images-container">
           <div class="product-small-image d-flex">
-            <div class="images w-100">
-            <%= form_with model: @product, url: products_path, method: :patch do |form| %>
-            <%= form.file_field :images , class:'form-control', placeholder:"Image",multiple: true, onchange:"readURL(this);", id:"preview_image"%><br>
-            <%= form.text_field :id, value:"#{@product.id}", type: "  ", id:"product_id"%>
-            <% end %>
+            <div class="row mx-0">
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="uploaded-images w-100">
+                          <img id="img_prev" src="#" alt=" Image preview" class="d-block w-100 h-100" />
+                 <%#= image_tag @product.preview_images.url, class:"h-100 w-100" if @product.preview_image_url.present? %>
+                </div>
+              </div>
             </div>
-            
+              <%# end %>
           </div>
         </div>
+            <%= form_with model: @product, url: product_url, multiple:true,  method: :patch do |form| %>
+                 <%= form.file_field :preview_images , multiple:true, class:'form-control add-small-image', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"img_prev"%><br>
+                    <input type="button" value="Add image" onclick="document.querySelector('.add-small-image').click();" />
+                  <%= form.text_field :id, value:"#{@product.id}", type: "hidden", id:"product_id"%>
+                  <%= button_to "Add Image", action: "update" %>
+            <% end %>
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
         <div class="product-content">
@@ -71,7 +100,7 @@
           <div class="product-options size">
            <ul class="my-0">
             <li>
-              <%#= @product.size %>
+              <%= @product.size %>
             </li>
           </ul>
         </div>
@@ -94,23 +123,27 @@
        <%= @product.category.name%>
       </div>
     </div>
-    <!-- Send Query -->
-    <div class="d-flex float-end product-details-call">
-      <input type="submit" class=" float-end send-query-button" value="Send Query">     
-    </div>
   </div>
 </div>
 </div>
 
 
-<!-- <script type="text/javascript">
-  var id = parseInt($("#product_id")[0].value)
-  $('#preview_image').change(function(){
-    $.ajax({
-      url: `products/:=${id}`,
-      type: "PATCH",
-      data: 
-    })
-  })
+    <script>
+      function readURL(input) {
+        for(var i=0; i<=4; i++){
 
-</script> -->
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#img_prev')
+              .attr('src', e.target.result)
+              .width(150)
+              .height(200);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    }
+    </script>

@@ -1,19 +1,34 @@
 <% if user_signed_in? && current_user.is_admin? %>
-    <%= form_with model: @product, url: @action == 'edit' ? new_product_path : products_path, method: @action=='edit' ? :patch : :post  do |form| %>
+    <%= form_with  model: @product, url: @action == 'edit' ? new_product_path : products_path, method: @action=='edit' ? :patch : :post, html:{multipart: true}  do |form| %>
 <section>
   <div class="product-details">
     <div class="row mx-0">
       <div class="col-lg-6 col-md-12 col-sm-12 px-lg-0 d-flex justify-content-end">
-        <div class="product-main-image">
-          <img id="img_prev" src="#" alt=" Image preview" class="d-block w-100" />
+        <div class="product-main-image product-main-add-image">
+          <div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active h-100">
+                          <img id="img_prev" src="#" alt=" Image preview" class="d-block w-100 h-100" />
 
-          <%#= form.hidden_field :image_cache %>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
         
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
         <div class="product-content">
-            <%= form.file_field :images , class:'form-control', placeholder:"Image", onchange:"readURL(this);", id:"img_prev"%><br>
+            <%= form.file_field :images , multiple: true, class:'form-control add-image', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"image_prev"%><br>
+              <!-- <input type="file" id="selectedFile" style="display: none;" /> -->
+              <input type="button" value="Add Image" onclick="document.querySelector('.add-image').click();" />
             <%= form.text_field :name , class:'input form-control', placeholder:"Name"%><br>
             
           <h1 class="product-heading"><%= @product.name%></h1>
@@ -66,37 +81,44 @@
           <div class="product-selection-text d-flex">
             <p class="f-20 my-0">Size</p>
           </div>
-          <div class="product-options size">
-           <ul class="my-0">
+          <div class="d-flex product-options size">
+
+          
+           <% @sizes.each do |s| %>
+           <%= form.check_box :size, { multiple: true }, s, false  %>
+           <%= form.label :size, s, for: "product_size_#{s}".downcase.to_sym %>
+           <% end %>
+
+          <!--  <ul class="my-0">
             <li>
-              <input type="checkbox" id="size-1" />
+              <input type="checkbox" id="size-1" name="size" value="XS"/>
               <label for="size-1"><div class="product-size">XS</div></label>
             </li>
             <li>
-              <input type="checkbox" id="size-2" />
+              <input type="checkbox" id="size-2"name="size" value="S">
               <label for="size-2"><div class="product-size">S</div></label>
             </li>
             <li>
-              <input type="checkbox" id="size-3" />
+              <input type="checkbox" id="size-3"name="size" value="M">
               <label for="size-3"><div class="product-size">M</div></label>
             </li>
             <li>
-              <input type="checkbox" id="size-4" />
+              <input type="checkbox" id="size-4"name="size" value="L">
               <label for="size-4"><div class="product-size">L</div></label>
             </li>
             <li>
-              <input type="checkbox" id="size-5" />
+              <input type="checkbox" id="size-5"name="size" value="XL">
               <label for="size-5"><div class="product-size">XL</div></label>
             </li>
             <li>
-              <input type="checkbox" id="size-6" />
+              <input type="checkbox" id="size-6"name="size" value="XXL">
               <label for="size-6"><div class="product-size">XXL</div></label>
             </li>
             <li>
-              <input type="checkbox" id="size-7" />
+              <input type="checkbox" id="size-7"name="size" value="XXXL">
               <label for="size-7"><div class="product-size">XXXL</div></label>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <!-- Quantity -->
@@ -106,7 +128,7 @@
         </div>
         <div class="product-options message1 quantity">
             <%= form.text_field :quantity , class:'input form-control product-message1', id:'message1', placeholder:'Enter Quantity'%>
-        <!-- <input class="product-message1" type="text" id="message1" placeholder="Enter quantity..." /> -->
+        <!-- <input class="product-message1" type="text" id="message1" placeholder="Enter quantity... -->
       </div>
     </div>
     <!-- Message1 -->
@@ -142,9 +164,13 @@
         </div>
     </div>
     <!-- Send Query -->
-    <div class="d-flex float-end product-details-call">
-      <%= link_to "Back", :back, class:"btn send-query-button " %>
-      <input type="submit" class="float-end btn-primary" value="Update" id="btn"></input><br>
+    <div class="d-flex justify-content-between product-details-call">
+      <div>
+        <%= link_to "Back", :back, class:"btn send-query-button  add-product-back-button  " %>  
+      </div>
+      <div>
+        <input type="submit" class="float-end btn-primary add-product-update-button" value="Update" id="btn"></input>
+      </div>
     </div>
   </div>
 </div>

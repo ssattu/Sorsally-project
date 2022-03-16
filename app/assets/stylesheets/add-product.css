@@ -17,13 +17,13 @@
 .add-product-form .gender-options{
 	width: 50%;
 }
-.product-main-image{
-      padding-top: 10%;
-    width: 93%;
-    height: 72%;
+.add-product-update-button{
+      padding: 16px 33px;
 }
-.product-main-image img{
-  height: 100% !important;
+.add-product-back-button {
+      border: 2px solid black !important;
+    padding: 16px 33px !important;
+    border-radius: 10px 0px 0px 10px !important;
 }
 .women-options,.men-options{
       padding-left: 25px;
@@ -31,4 +31,9 @@
 .add-images{
   position: relative;
   left: 32px;
+}
+.product-small-image .uploaded-images{
+  background: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/add.jpg');
+  background-size: cover;
+  background-position: center;
 }

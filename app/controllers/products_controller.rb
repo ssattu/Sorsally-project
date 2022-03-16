@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+     @sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     @action ='new'
     current_user.is_admin? ? "#{@product = Product.new()}" : "#{redirect_to products_path}" 
   end
@@ -32,7 +33,8 @@ class ProductsController < ApplicationController
   end
     
   def create 
-    # debugger
+    debugger
+    # images ||= params(p_params).split(",")
     @product = Product.new(p_params)
     # if@product.present?
     #  @product.update(deleted:false)
@@ -50,9 +52,10 @@ class ProductsController < ApplicationController
   end
 
   def update
+    debugger
     @product = Product.find_by(id: params[:id])
     # debugger
-    if @product.update(b_params) 
+    if @product.update(p_params) 
       redirect_to products_path, notice: "Product is Updated Successfully"
     else
       render 'edit'
@@ -99,6 +102,6 @@ class ProductsController < ApplicationController
   end
 
   def p_params
-    params.require(:product).permit( :name, :price, :gender, :color, :quantity, :description, :images, :category_id)
+    params.require(:product).permit(:id, :name, :price, :gender, :color, :quantity, :description, {images: []}, :category_id, {preview_images: []}, {size:[]})
   end
 end

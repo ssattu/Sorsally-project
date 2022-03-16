@@ -7,7 +7,7 @@
 	white-space: nowrap;
 	background: #fff;
 }
-.product-small-images-container::-webkit-scrollbar{
+.product-small-image::-webkit-scrollbar{
 	display: none;
 }
 .product-small-images-container{
@@ -23,6 +23,13 @@
 }
 .carousel-control-prev-icon{
 	background-image: url('https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/product-details-prev-arrow.svg') !important;
+}
+.product-small-image{
+	    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 900px;
+    white-space: nowrap;
+    flex-wrap: nowrap !important;
 }
 .product-details .product-small-image .images{
 	width: 180px;
@@ -159,6 +166,11 @@
 .color-14{
 	background: #0C670F !important;
 }
+.product-main-add-image{
+	height: 85%;
+	width: 100%;
+}
+
 
 .product-selection{
 	margin: 24px 0px;
