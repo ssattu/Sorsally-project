@@ -26,16 +26,18 @@
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
         <div class="product-content">
-            <%= form.file_field :images , multiple: true, class:'form-control add-image', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"image_prev"%><br>
+            <%= form.file_field :images , multiple: true, class:'form-control add-image ', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"image_prev", :required => true%><br>
               <!-- <input type="file" id="selectedFile" style="display: none;" /> -->
-              <input type="button" value="Add Image" onclick="document.querySelector('.add-image').click();" />
-            <%= form.text_field :name , class:'input form-control', placeholder:"Name"%><br>
+             <div class="float-right mb-3">
+              <input type="button" value="Add Image" class="d-flex btn btn-primary m-3" onclick="document.querySelector('.add-image').click();" />
+             </div>
+            <%= form.text_field :name , class:'input form-control', placeholder:"Name", :required => true%><br>
             
           <h1 class="product-heading"><%= @product.name%></h1>
-            <%= form.text_field :price , class:'input form-control', placeholder:"Price"%><br>
+            <%= form.text_field :price , class:'input form-control', placeholder:"Price", :required => true%><br>
           <!-- <h3 class="product-price">$24.95-$249.5</h3> -->
           
-            <%= form.text_area :description , size: 100*5, class:'input form-control', placeholder:'Description' %>
+            <%= form.text_area :description , size: 100*5, class:'input form-control', placeholder:'Description', :required => true %>
 
           <!-- Color -->
           <div class="product-selection selection-type-color d-flex align-items-center">
@@ -127,7 +129,7 @@
          <%= form.label :quantity, "Quantity "%><br>
         </div>
         <div class="product-options message1 quantity">
-            <%= form.text_field :quantity , class:'input form-control product-message1', id:'message1', placeholder:'Enter Quantity'%>
+            <%= form.text_field :quantity , class:'input form-control product-message1', id:'message1', placeholder:'Enter Quantity', :required => true%>
         <!-- <input class="product-message1" type="text" id="message1" placeholder="Enter quantity... -->
       </div>
     </div>
@@ -135,10 +137,10 @@
     <div class="product-selection selection-type-quantity d-flex align-items-center">
       <div class="product-selection-text d-flex">
         <!-- <p class="f-20 my-0">Message</p> -->
-        <%= form.label :category_id, "Category "%><br>
+        <%= form.label :category_id, "Category ", :required => true%><br>
       </div>
       <div class="product-options message1">
-            <%= form.select :category_id ,  Category.all.collect{|c| [c.name, c.id]}, class:'input form-control'%>
+            <%= form.select :category_id , Category.all.collect{|c| [c.name, c.id]}, class:'input form-control' %>
         <!-- <input class="product-message1" type="text" id="message1" placeholder="Type here..." /> -->
       </div>
     </div>
@@ -151,12 +153,12 @@
             <div class="d-flex  align-items-center">
             <div class="women-options">
             <%= form.radio_button :gender, "women" %>
-            <%= form.label :gender, "Women" %>
+            <%= form.label :gender_women, "Women" %>
                 
             </div>
             <div class="men-options">
             <%= form.radio_button :gender, "men" %>
-            <%= form.label :gender, "Men" %>
+            <%= form.label :gender_men, "Men" %>
                 
             </div>
                 
