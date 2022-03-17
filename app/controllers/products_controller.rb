@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-     @sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+    @sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     @action ='new'
     current_user.is_admin? ? "#{@product = Product.new()}" : "#{redirect_to products_path}" 
   end
@@ -46,6 +46,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     @action ='edit'
     @product = Product.find_by(id: params[:id])
 

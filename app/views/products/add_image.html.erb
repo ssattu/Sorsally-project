@@ -40,14 +40,7 @@
               <%# end %>
           </div>
         </div>
-        <div class="mt-2">
-            <%= form_with model: @product, url: product_url, multiple:true, class:"d-flex float-end", method: :patch do |form| %>
-                 <%= form.file_field :preview_images , multiple:true, class:'form-control add-small-image', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"img_prev"%><br>
-                    <input type="button" class="btn btn-primary m-3" value="Add image" onclick="document.querySelector('.add-small-image').click();" />
-                  <%= form.text_field :id, value:"#{@product.id}", type: "hidden", id:"product_id"%>
-                  <%= button_to "Add Image", action: "update", class:""%>
-            <% end %>
-        </div>
+        
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
         <div class="product-content">
@@ -125,6 +118,14 @@
        <%= @product.category.name%>
       </div>
     </div>
+    <div class="mt-2">
+            <%= form_with model: @product, url: product_url, multiple:true, class:"d-flex float-end", method: :patch do |form| %>
+                 <%= form.file_field :preview_images , multiple:true, class:'form-control add-small-image', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"img_prev"%><br>
+                    <input type="button" class="btn btn-primary m-3" value="Add image" onclick="document.querySelector('.add-small-image').click();" />
+                  <%= form.text_field :id, value:"#{@product.id}", type: "hidden", id:"product_id"%>
+                  <%= button_to "Update Image", product_path(@product.id),method: :patch, class:'add-image-btn'%>
+            <% end %>
+        </div>
   </div>
 </div>
 </div>
