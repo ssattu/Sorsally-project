@@ -28,11 +28,11 @@
 						<div class="action-button d-flex">
 							
 						  <!-- <button class=" text-start" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-						  	<a href="<%=  activate_user_path(user.id)%>",  data-method="get" class="delete-btn" > 
+						  	<a href="<%=  activate_user_path(user)%>",  data-method="get" class="delete-btn" > 
 					     <%= image_tag "#{ENV['BUCKET_URL']}check.png",class:"check-icon user-detail-icon", alt:"" %></a>
 					   <!-- </button> -->
 						  <!-- <button class="cross text-start" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">  -->
-						  	<a href="<%= user_path(user.id)%>",  data-method="delete" class="delete-btn" >
+						  	<a href="<%= user_path(user)%>",  data-method="delete" class="delete-btn" >
 					     <%= image_tag "#{ENV['BUCKET_URL']}icons8-close-64.png",class:"cross-icon user-detail-icon", alt:"" %></a>
 					   <!-- </button> -->
 					   
