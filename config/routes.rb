@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "sorsallys#index"
+  get 'users/:id', to: "users#activate", as: "activate_user"
 
   devise_for :users, controllers: {sessions: "users/sessions" , registrations: "users/registrations"}
   resources :sorsallys
