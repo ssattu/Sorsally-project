@@ -18,7 +18,15 @@
 	width: 50%;
 }
 .add-product-update-button{
-      padding: 16px 33px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    padding: 22px 36px;
+    background: #00C2FF;
+    border-radius: 6px;
+    border: none;
 }
 .add-product-back-button {
       border: 2px solid black !important;
