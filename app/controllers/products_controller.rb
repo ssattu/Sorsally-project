@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
   def new
     @sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     @action ='new'
+    @category = Category.new()
     current_user.is_admin? ? "#{@product = Product.new()}" : "#{redirect_to products_path}" 
   end
 
