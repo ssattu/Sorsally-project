@@ -46,7 +46,7 @@
         <div class="product-content">
           <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>"><%= @product.name %></a> </span>
           <h1 class="product-heading"><%= @product.name %></h1>
-          <h3 class="product-price"><%= @product.price %></h3>
+          <h3 class="product-price"><%=price(@product)%></h3>
           <p class="product-desc"><%= @product.description %></p>
 
           <!-- Color -->
@@ -56,34 +56,13 @@
             </div>
             <div class="product-options color">
              <ul class="my-0">
-              <li>
-                <input type="checkbox" id="color-1" />
-                <label for="color-1"><div class="product-color color-1"></div></label>
+
+              <%#(@product.color).each do|color| %>
+              <li >
+                <input type="checkbox" id="color-1"  />
+               <label for="color-1"><div class="product-color" style="background-color: <%= @product.color%>"></div></label>
               </li>
-              <li>
-                <input type="checkbox" id="color-2" />
-                <label for="color-2"><div class="product-color color-2"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-3" />
-                <label for="color-3"><div class="product-color color-3"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-4" />
-                <label for="color-4"><div class="product-color color-4"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-5" />
-                <label for="color-5"><div class="product-color color-5"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-6" />
-                <label for="color-6"><div class="product-color color-6"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-7" />
-                <label for="color-7"><div class="product-color color-7"></div></label>
-              </li>
+              <%#end %>
             </ul>
           </div>
         </div>
@@ -115,7 +94,7 @@
         <p class="f-20 my-0">Category</p>
       </div>
       <div class="product-options message1">
-       <%= @product.category.name%>
+       <%= @product.category.category_name%>
       </div>
     </div>
     <div class="mt-2">

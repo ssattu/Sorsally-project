@@ -162,7 +162,12 @@
       /* background: #6aa6ed; */
       padding: 0.1em 0.25em; }
   
-
+a:hover{
+	background: none !important;
+}
+a:focus{
+	background: none !important;
+}
 /*Responsive Product-list*/
 @media(min-width: 991px){
 	.category-selection-list{

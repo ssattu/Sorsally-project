@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
     @action ='new'
     @category = Category.new()
     current_user.is_admin? ? "#{@product = Product.new()}" : "#{redirect_to products_path}" 
+    # @color = @product.color
   end
 
   def add_image
@@ -34,9 +35,9 @@ class ProductsController < ApplicationController
   end
     
   def create 
-    # debugger
     # images ||= params(p_params).split(",")
     @product = Product.new(p_params)
+    debugger
     # if@product.present?
     #  @product.update(deleted:false)
     # else
@@ -104,6 +105,6 @@ class ProductsController < ApplicationController
   end
 
   def p_params
-    params.require(:product).permit(:id, :name, :price, :gender, :color, :quantity, :description, {images: []}, :category_id, {preview_images: []}, {size:[]})
+    params.require(:product).permit(:id, :name, :price, :gender, { color: []} , :quantity, :description, {images: []}, :category_id, {preview_images: []}, {size:[]})
   end
 end

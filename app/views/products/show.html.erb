@@ -47,7 +47,7 @@
         <div class="product-content">
            <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>"><%= @product.name %></a> </span>
           <h1 class="product-heading"><%= @product.name %></h1>
-          <h3 class="product-price"><%= @product.price %></h3>
+          <h3 class="product-price"><%=  price(@product) %></h3>
           <p class="product-desc"><%= @product.description %></p>
 
 
@@ -58,11 +58,11 @@
             </div>
             <div class="product-options color">
              <ul class="my-0">
-              <li>
-                <input type="checkbox" id="color-1" />
-                <label for="color-1"><div class="product-color color-1"></div></label>
+              <li >
+                <input type="checkbox" id="color-1"  />
+               <label for="color-1"><div class="product-color" style="background-color: <%= @product.color%>"></div></label>
               </li>
-              <li>
+              <!-- <li>
                 <input type="checkbox" id="color-2" />
                 <label for="color-2"><div class="product-color color-2"></div></label>
               </li>
@@ -85,7 +85,7 @@
               <li>
                 <input type="checkbox" id="color-7" />
                 <label for="color-7"><div class="product-color color-7"></div></label>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

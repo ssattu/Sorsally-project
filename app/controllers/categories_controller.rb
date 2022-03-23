@@ -23,6 +23,15 @@ class CategoriesController < ApplicationController
     redirect_to new_product_path 
   end 
 
+  def destroy
+    @category = Category.find_by(id: params[:id])
+    @category.destroy
+    # debugger
+    # @category.update(deleted: true)
+
+    redirect_to products_path, notice: "Category is Deleted Successfully"
+  end
+
   private
   def c_params
     params.require(:category).permit(:id, :category_name)

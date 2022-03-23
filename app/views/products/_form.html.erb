@@ -62,33 +62,10 @@
           <div class="product-options color">
            <ul class="my-0 d-flex">
             <li>
-              <input type="checkbox" id="color-1" />
-              <label for="color-1"><div class="product-color color-1"></div></label>
+              <%= form.color_field :color, :id => 'Color' %>  
             </li>
-            <li>
-              <input type="checkbox" id="color-2" />
-              <label for="color-2"><div class="product-color color-2"></div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="color-3" />
-              <label for="color-3"><div class="product-color color-3"></div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="color-4" />
-              <label for="color-4"><div class="product-color color-4"></div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="color-5" />
-              <label for="color-5"><div class="product-color color-5"></div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="color-6" />
-              <label for="color-6"><div class="product-color color-6"></div></label>
-            </li>
-            <li>
-              <input type="checkbox" id="color-7" />
-              <label for="color-7"><div class="product-color color-7"></div></label>
-            </li>
+            
+            
             <li class="add-product-upload-color">
               <a href="" title=""><img src="https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/add-color.png" class="w-100" alt=""></a>
             </li>
@@ -127,38 +104,10 @@
     </div>
     <div class="d-flex product-options category product-update-category">
       <%= form.select :category_id , Category.all.collect{|c| [c.category_name, c.id]}, class:'input form-control' %>
-      <!-- <a href="/categories/new" title="Add Category"><img src="https://img.icons8.com/ios/50/000000/add-to-collection--v1.png"/></a> -->
-
-
-      <!-- Button trigger modal -->
       <button type="button" class="btn btn-success btn-xs modal-btn" data-toggle="modal" data-target="#approvalModal" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
         <img src="https://img.icons8.com/ios/50/000000/add-to-collection--v1.png"/>
       </button>
 
-
-
-   <!--    <button class="open-button" onclick="openForm()">Open Form</button>
-
-      <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-          <h1>Login</h1>
-
-          <%#= form.label :name, "Name "%><br>
-          <%#= form.text_field :name, placeholder:'Name', :required => true%>
-          <input type="text" placeholder="Enter Email" name="email" required>
-
-          <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-          </form>
-        </div> -->
-
-
-
-
-        <!-- <input class="product-message1" type="text" id="message1" placeholder="Type here..." /> -->
       </div>
     </div>
     <div class="product-selection selection-type-quantity d-flex align-items-center">
@@ -193,26 +142,6 @@
 </div>
 </div>
 
-
-
-<!-- Modal -->
-<!-- <div class="modal fade" id="approvalModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="approvalModalLabel" aria-hidden="true"> -->
-
-  <!-- <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Approval</h4>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        
-      </div> -->
-      <!-- </div>/.modal-content -->
-  <!-- </div> /.modal-dialog
-  </div> --><!-- /.modal --> 
 </section>
 <%end%>
 <% end %>
