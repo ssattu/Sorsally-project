@@ -64,6 +64,8 @@
 .product-update-category select{
   padding-left: 12px;
   width: 100%;
+  border: 1px solid rgba(58, 58, 58, 0.1) !important;
+  background: #fff;
 }
 .product-update-category img{
   height: 32px;
@@ -75,6 +77,15 @@
 }
 .add-new-product-form-input{
   padding: 18px 0.75rem !important;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+  border: 1px solid rgba(58, 58, 58, 0.1) !important;
+}
+.add-new-product-form-input::placeholder, .add-new-product-form-input{
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--text-primary-color) !important;
+  font-size: 18px;
 }
 .add-product-upload-color{
   width: 6%;
