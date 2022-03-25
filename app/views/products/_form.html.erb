@@ -51,7 +51,7 @@
         <%= form.text_field :price , class:'input add-new-product-form-input form-control', placeholder:"Price", :required => true%><br>
         <!-- <h3 class="product-price">$24.95-$249.5</h3> -->
 
-        <%= form.text_area :description , size: 100*5, class:'input form-control', placeholder:'Description', :required => true %>
+        <%= form.text_area :description , size: 100*5, class:'input add-new-product-form-input form-control', placeholder:'Description', :required => true %>
 
         <!-- Color -->
         <div class="product-selection selection-type-color d-flex align-items-center">
@@ -106,7 +106,7 @@
       <%= form.select :category_id , Category.all.collect{|c| [c.category_name, c.id]}, class:'input form-control' %>
 
       <button type="button" class="btn btn-success btn-xs modal-btn" data-toggle="modal" data-target="#approvalModal" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <img src="https://img.icons8.com/ios/50/000000/add-to-collection--v1.png"/>
+        <img src="https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/icons8-plus-64.png"/>
       </button>
 
       </div>
