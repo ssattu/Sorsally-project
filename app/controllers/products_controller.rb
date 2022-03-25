@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   def create 
     # images ||= params(p_params).split(",")
     @product = Product.new(p_params)
-    debugger
+    # debugger
     # if@product.present?
     #  @product.update(deleted:false)
     # else
