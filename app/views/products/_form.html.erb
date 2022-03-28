@@ -53,92 +53,74 @@
 
         <%= form.text_area :description , size: 100*5, class:'input add-new-product-form-input form-control', placeholder:'Description', :required => true %>
 
-        <!-- Color -->
-        <div class="product-selection selection-type-color d-flex align-items-center">
-          <div class="product-selection-text d-flex">
-            <%= form.label :color, "Color "%><br>
-            <!-- <p class="f-20 my-0">Color</p> -->
-          </div>
-          <div class="product-options color">
-           <ul class="my-0 d-flex">
-            <li>
-              <%= form.color_field :color, :id => 'Color' %>  
-            </li>
-            
-            
-            <li class="add-product-upload-color">
-              <a href="" title=""><img src="https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/add-color.png" class="w-100" alt=""></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Size -->
-      <div class="product-selection selection-type-size d-flex align-items-center">
-        <div class="product-selection-text d-flex">
-          <p class="f-20 my-0">Size</p>
-        </div>
-        <div class="d-flex product-options size product-options-size-update">
-
-
-         <% @sizes.each do |s| %>
-         <%= form.check_box :size, { multiple: true }, s, false  %>
-         <%= form.label :size, s, for: "product_size_#{s}".downcase.to_sym, class:'d-flex justify-content-center align-items-center'%>
-         <% end %>
-       </div>
-     </div>
-     <!-- Quantity -->
-     <div class="product-selection selection-type-quantity d-flex align-items-center">
+   
+    <!-- Size -->
+    <div class="product-selection selection-type-size d-flex align-items-center">
       <div class="product-selection-text d-flex">
-       <%= form.label :quantity, "Quantity "%><br>
+        <p class="f-20 my-0">Size</p>
+      </div>
+      <div class="d-flex product-options size product-options-size-update">
+
+
+       <% @sizes.each do |s| %>
+       <%= form.check_box :size, { multiple: true }, s, false  %>
+       <%= form.label :size, s, for: "product_size_#{s}".downcase.to_sym, class:'d-flex justify-content-center align-items-center'%>
+       <% end %>
      </div>
-     <div class="product-options message1 quantity m-0 add-product-message">
-      <%= form.text_field :quantity , class:'input form-control product-message1', id:'message1', placeholder:'Enter Quantity', :required => true%>
-      <!-- <input class="product-message1" type="text" id="message1" placeholder="Enter quantity... -->
-    </div>
-  </div>
-  <!-- Message1 -->
-  <div class="product-selection selection-type-quantity d-flex align-items-center">
+   </div>
+   <!-- Quantity -->
+   <div class="product-selection selection-type-quantity d-flex align-items-center">
     <div class="product-selection-text d-flex">
-      <!-- <p class="f-20 my-0">Message</p> -->
-      <%= form.label :category_id, "Category ", :required => true%><br>
-    </div>
-    <div class="d-flex product-options category product-update-category">
-      <%= form.select :category_id , Category.all.collect{|c| [c.category_name, c.id]}, class:'input form-control' %>
+     <%= form.label :quantity, "Quantity "%><br>
+   </div>
+   <div class="product-options message1 quantity m-0 add-product-message">
+    <%= form.text_field :quantity , class:'input form-control product-message1', id:'message1', placeholder:'Enter Quantity', :required => true%>
+    <!-- <input class="product-message1" type="text" id="message1" placeholder="Enter quantity... -->
+  </div>
+</div>
+<!-- Message1 -->
+<div class="product-selection selection-type-quantity d-flex align-items-center">
+  <div class="product-selection-text d-flex">
+    <!-- <p class="f-20 my-0">Message</p> -->
+    <%= form.label :category_id, "Category ", :required => true%><br>
+  </div>
+  <div class="d-flex product-options category product-update-category">
+    <%= form.select :category_id , Category.all.collect{|c| [c.category_name, c.id]}, class:'input form-control' %>
 
-      <button type="button" class="btn btn-success btn-xs modal-btn" data-toggle="modal" data-target="#approvalModal" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <img src="https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/icons8-plus-64.png"/>
-      </button>
+    <button type="button" class="btn btn-success btn-xs modal-btn" data-toggle="modal" data-target="#approvalModal" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img src="https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/icons8-plus-64.png"/>
+    </button>
+
+  </div>
+</div>
+<div class="product-selection selection-type-quantity d-flex align-items-center">
+  <div class="product-selection-text" >
+    <%= form.label :gender , "Gender "%>
+
+  </div>
+  <div class="gender-options">
+    <div class="d-flex  align-items-center">
+      <div class="women-options">
+        <%= form.radio_button :gender, "women" %>
+        <%= form.label :gender_women, "Women" %>
 
       </div>
-    </div>
-    <div class="product-selection selection-type-quantity d-flex align-items-center">
-      <div class="product-selection-text" >
-        <%= form.label :gender , "Gender "%>
+      <div class="men-options">
+        <%= form.radio_button :gender, "men" %>
+        <%= form.label :gender_men, "Men" %>
 
       </div>
-      <div class="gender-options">
-        <div class="d-flex  align-items-center">
-          <div class="women-options">
-            <%= form.radio_button :gender, "women" %>
-            <%= form.label :gender_women, "Women" %>
 
-          </div>
-          <div class="men-options">
-            <%= form.radio_button :gender, "men" %>
-            <%= form.label :gender_men, "Men" %>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- Send Query -->
-    <div class="d-flex justify-content-end product-details-call">
-      <div>
-        <input type="submit" class="float-end btn-primary add-product-update-button" value="Update" id="btn"></input>
-      </div>
     </div>
   </div>
+</div>
+<!-- Send Query -->
+<div class="d-flex justify-content-end product-details-call">
+  <div>
+    <input type="submit" class="float-end btn-primary add-product-update-button" value="Update" id="btn"></input>
+  </div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -147,12 +129,12 @@
 <%end%>
 <% end %>
 
-<!-- Modal -->
+<!-- Modal for category-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Catagory</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -169,6 +151,9 @@
     </div>
   </div>
 </div>
+
+
+
 
 <script>
   function readURL(input) {

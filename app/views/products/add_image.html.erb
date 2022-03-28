@@ -1,5 +1,6 @@
 
 <section>
+    <%= form_with model: @product, url: product_url, multiple:true, class:"d-flex float-end", method: :patch do |form| %>
   <div class="product-details">
     <div class="row mx-0">
       <div class="col-lg-6 col-md-12 col-sm-12 px-lg-0 d-flex justify-content-end flex-column add-images">
@@ -9,48 +10,70 @@
               <div class="carousel-item active h-100">
                <%= image_tag @product.images[0].url, height:"100%",width:"100%" if @product.images[0].url.present? %>
 
-              </div>
-                <% @product.images.each do |i|%>
-              <div class="carousel-item  h-100">
+             </div>
+             <% @product.images.each do |i|%>
+             <div class="carousel-item  h-100">
                <%= image_tag i.url,height:"100%",width:"100%" if i.url.present? %>
 
-              </div>
-                <% end %>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+             </div>
+             <% end %>
+           </div>
+           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="product-small-images-container">
-          <div class="product-small-image d-flex">
-            <div class="row mx-0">
-              <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="uploaded-images w-100">
-                          <img id="img_prev" src="#" alt=" Image preview" class="d-block w-100 h-100" />
-                 <%#= image_tag @product.preview_images.url, class:"h-100 w-100" if @product.preview_image_url.present? %>
-                </div>
-              </div>
-            </div>
-              <%# end %>
-          </div>
-        </div>
-        
       </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
-        <div class="product-content w-100">
-          <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>"><%= @product.name %></a> </span>
-          <h1 class="product-heading"><%= @product.name %></h1>
-          <h3 class="product-price"><%=price(@product)%></h3>
-          <p class="product-desc"><%= @product.description %></p>
+      <div class="product-small-images-container">
+        <div class="product-small-image d-flex">
+          <div class="row mx-0">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="uploaded-images w-100">
+                <img id="img_prev" src="#" alt=" Image preview" class="d-block w-100 h-100" />
+                <%#= image_tag @product.preview_images.url, class:"h-100 w-100" if @product.preview_image_url.present? %>
+              </div>
+            </div>
+          </div>
+          <%# end %>
+        </div>
+      </div>
 
-          <!-- Color -->
-          <div class="product-selection selection-type-color d-flex align-items-center">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
+      <div class="product-content w-100">
+        <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>"><%= @product.name %></a> </span>
+        <h1 class="product-heading"><%= @product.name %></h1>
+        <h3 class="product-price"><%=price(@product)%></h3>
+        <p class="product-desc"><%= @product.description %></p>
+
+        <!-- Color -->
+        <div class="product-selection selection-type-color d-flex align-items-center">
+          <div class="product-selection-text d-flex">
+            <%= form.label :color, "Color "%><br>
+            <!-- <p class="f-20 my-0">Color</p> -->
+          </div>
+          <div class="d-flex product-options color add-product-upload-color">
+          <% @colors.each do |i|%>
+          <ul class="my-0 d-flex">            
+            <li >
+                <input type="checkbox" id="color-1"  />
+               <label for="color-1"><div class="product-color"><%= image_tag i.color.url,height:"100%",width:"100%" if i.color.url.present? %></div></label>
+              </li>
+          </ul>
+          <% end %>
+
+        <button type="button" class="btn btn-success btn-xs modal-btn" data-toggle="modal" data-target="#approvalModal" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
+          <img src="https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/icons8-plus-64.png"/>
+        </button>
+      </div>
+    </div>
+
+    <!-- Color -->
+   <!--        <div class="product-selection selection-type-color d-flex align-items-center">
             <div class="product-selection-text d-flex">
               <p class="f-20 my-0">Color</p>
             </div>
@@ -60,12 +83,12 @@
               <%#(@product.color).each do|color| %>
               <li >
                 <input type="checkbox" id="color-1"  />
-               <label for="color-1"><div class="product-color" style="background-color: <%= @product.color%>"></div></label>
+               <label for="color-1"><div class="product-color" style="background-color: <%#= @product.color%>"></div></label>
               </li>
               <%#end %>
             </ul>
           </div>
-        </div>
+        </div> -->
         <!-- Size -->
         <div class="product-selection selection-type-size d-flex align-items-center">
           <div class="product-selection-text d-flex">
@@ -86,46 +109,69 @@
         </div>
         <div class="product-options message1 quantity">
          <%= @product.quantity%>
-      </div>
-    </div>
-    <!-- Message1 -->
-    <div class="product-selection selection-type-quantity d-flex align-items-center">
+       </div>
+     </div>
+     <!-- Message1 -->
+     <div class="product-selection selection-type-quantity d-flex align-items-center">
       <div class="product-selection-text d-flex">
         <p class="f-20 my-0">Category</p>
       </div>
       <div class="product-options message1">
        <%= @product.category.category_name%>
-      </div>
-    </div>
-    <div class="mt-2">
-            <%= form_with model: @product, url: product_url, multiple:true, class:"d-flex float-end", method: :patch do |form| %>
-                 <%= form.file_field :preview_images , multiple:true, class:'form-control add-small-image', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"img_prev"%><br>
-                    <input type="button" class="btn btn-primary m-3" value="Add image" onclick="document.querySelector('.add-small-image').click();" />
-                  <%= form.text_field :id, value:"#{@product.id}", type: "hidden", id:"product_id"%>
-                  <%= button_to "Update Image", product_path(@product.id),method: :patch, class:'add-image-btn btn btn-primary m-3'%>
-            <% end %>
-        </div>
+     </div>
+   </div>
+   <div class="mt-2">
+    <%= form.file_field :preview_images , multiple:true, class:'form-control add-small-image', placeholder:"Image",style:"display: none;", onchange:"readURL(this);", id:"img_prev"%><br>
+    <input type="button" class="btn btn-primary m-3" value="Add image" onclick="document.querySelector('.add-small-image').click();" />
+    <%= form.text_field :id, value:"#{@product.id}", type: "hidden", id:"product_id"%>
+    <%= button_to "Update Image", product_path(@product.id),method: :patch, class:'add-image-btn btn btn-primary m-3'%>
+    <% end %>
   </div>
 </div>
 </div>
+</div>
+
+<!-- Modal 2 for color -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Color</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with  model: @color, url: colors_path, method: :post  do |form| %>
+        <%#= form_tag categories_path(@category), method: :post, :class => "form-horizontal" do %>
+        <%= form.label :color, :class => 'control-label' %>
+        <%= form.file_field :color, class:'form-control', placeholder:"Color Image"%>
+        <%= form.text_field :product_id , value: "#{@product.id}",type:'hidden',  class:'form-control' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%= form.submit  "Add", class: "btn btn-success  bg-primary " %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    <script>
-      function readURL(input) {
-        for(var i=0; i<=4; i++){
+<script>
+  function readURL(input) {
+    for(var i=0; i<=4; i++){
 
-        if (input.files && input.files[0]) {
-          var reader = new FileReader();
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-          reader.onload = function (e) {
-            $('#img_prev')
-              .attr('src', e.target.result)
-              .width(150)
-              .height(200);
-          };
+        reader.onload = function (e) {
+          $('#img_prev')
+          .attr('src', e.target.result)
+          .width(150)
+          .height(200);
+        };
 
-          reader.readAsDataURL(input.files[0]);
-        }
+        reader.readAsDataURL(input.files[0]);
       }
     }
-    </script>
+  }
+</script>

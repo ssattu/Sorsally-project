@@ -104,3 +104,7 @@
   border: none !important;
   box-shadow: none !important;
 }
+
+.add-product-upload-color img{
+  height: 32px !important;
+}

@@ -31,6 +31,8 @@ class ProductsController < ApplicationController
 
   def add_image
     # current_user.is_admin? ? "#{@product = Product.new()}" : "#{redirect_to products_path}" 
+    @color = Color.new()
+    @colors = Color.where(product_id: params[:id])
     @product = Product.find_by(id: params[:id])
   end
     

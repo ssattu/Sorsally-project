@@ -4,5 +4,5 @@ class Product < ApplicationRecord
 
   mount_uploaders :images, ImagesUploader
   mount_uploaders :preview_images, PreviewImagesUploader
-  
+  has_many :colors
 end
