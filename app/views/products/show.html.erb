@@ -5,130 +5,102 @@
         <div class="product-main-image">
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              
+
               <div class="carousel-item active h-100 ">
                <%= image_tag @product.images[0].url,height:"100%", width:"100%" if @product.images[0].url.present? %>
-              </div>
-                <% @product.images.each do |i|%>
-              <div class="carousel-item  h-100">
+             </div>
+             <% @product.images.each do |i|%>
+             <div class="carousel-item  h-100">
                <%= image_tag i.url, width:"100%" if i.url.present? %>
-              </div>
-                <% end %>
-              <!-- <div class="carousel-item active">
-                <%#= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
-              </div>
-              <div class="carousel-item">
-                <%#= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
-              </div> -->
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+             </div>
+             <% end %>
+           </div>
+           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="product-small-images-container">
-          <div class="product-small-image d-flex row mx-0">
-            
-            <% @product.images.each do |j|%>
-              <div class="images col-lg-3 col-md-4 col-sm-6">
-                 <%= image_tag j.url, width:"100%" if j.url.present? %>
-              </div>
-            <% end %>
-            
-            </div>
-          </div>
-        </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
-        <div class="product-content w-100">
-           <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>"><%= @product.name %></a> </span>
-          <h1 class="product-heading"><%= @product.name %></h1>
-          <h3 class="product-price"><%=  price(@product) %></h3>
-          <p class="product-desc"><%= @product.description %></p>
+      </div>
+      <div class="product-small-images-container">
+        <div class="product-small-image d-flex row mx-0">
+
+          <% @product.images.each do |j|%>
+          <div class="images col-lg-3 col-md-4 col-sm-6">
+           <%= image_tag j.url, width:"100%" if j.url.present? %>
+         </div>
+         <% end %>
+
+       </div>
+     </div>
+   </div>
+   <div class="col-lg-6 col-md-12 col-sm-12 product-content-container d-flex">
+    <div class="product-content w-100">
+     <span class="f-20"><a href="/">Home</a> / <a href="/products">Catalog</a> / <a class="product-active" href="<%= product_path(@product.id)%>"><%= @product.name %></a> </span>
+     <h1 class="product-heading"><%= @product.name %></h1>
+     <h3 class="product-price"><%=  price(@product) %></h3>
+     <p class="product-desc"><%= @product.description %></p>
 
 
-          <!-- Color -->
-          <div class="product-selection selection-type-color d-flex align-items-center">
-            <div class="product-selection-text d-flex">
-              <p class="f-20 my-0">Color</p>
-            </div>
-            <div class="product-options color">
-             <ul class="my-0">
-              <li >
-                <input type="checkbox" id="color-1"  />
-               <label for="color-1"><div class="product-color" style="background-color: <%= @product.color%>"></div></label>
-              </li>
-              <!-- <li>
-                <input type="checkbox" id="color-2" />
-                <label for="color-2"><div class="product-color color-2"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-3" />
-                <label for="color-3"><div class="product-color color-3"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-4" />
-                <label for="color-4"><div class="product-color color-4"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-5" />
-                <label for="color-5"><div class="product-color color-5"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-6" />
-                <label for="color-6"><div class="product-color color-6"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-7" />
-                <label for="color-7"><div class="product-color color-7"></div></label>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <!-- Size -->
-        <div class="product-selection selection-type-size d-flex align-items-center">
-          <div class="product-selection-text d-flex">
-            <p class="f-20 my-0">Size</p>
-          </div>
-          <div class="product-options size ms-4">
-           <%= @product.size%>
-          </div>
-      </div>
-      <!-- Quantity -->
-      <div class="product-selection selection-type-quantity d-flex align-items-center">
-        <div class="product-selection-text d-flex">
-          <p class="f-20 my-0">Quantity</p>
-        </div>
-        <div class="product-options message1 quantity">
-        <input class="product-message1" type="text" id="message1" placeholder="Enter quantity..." />
-      </div>
-    </div>
-    <!-- Message1 -->
-    <div class="product-selection selection-type-quantity d-flex align-items-center">
+     <!-- Color -->
+     <div class="product-selection selection-type-color d-flex align-items-center">
       <div class="product-selection-text d-flex">
-        <p class="f-20 my-0">Message</p>
+        <p class="f-20 my-0">Color</p>
       </div>
-      <div class="product-options message1">
-        <input class="product-message1" type="text" id="message1" placeholder="Type here..." />
-      </div>
-    </div>
-    <!-- Send Query -->
-    <div class="d-flex float-end product-details-call">
-      <button class="trigger">Easy Customisation</button>
-      <input type="submit" class=" float-end send-query-button" value="Send Query">     
+      <div class="product-options color">
+       <ul class="my-0">
+         <% @colors.each do |i|%>
+         <li >
+          <input type="checkbox" id="<%= i %>" class="add-product-color-checkbox" />
+          <label for="<%= i %>"><div class="product-color d-flex"><%= image_tag i.color.url,height:"100%",width:"100%" if i.color.url.present? %></div></label>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
+  <!-- Size -->
+  <div class="product-selection selection-type-size d-flex align-items-center">
+    <div class="product-selection-text d-flex">
+      <p class="f-20 my-0">Size</p>
+    </div>
+    <div class="product-options size ms-4">
+     <%= @product.size%>
+   </div>
+ </div>
+ <!-- Quantity -->
+ <div class="product-selection selection-type-quantity d-flex align-items-center">
+  <div class="product-selection-text d-flex">
+    <p class="f-20 my-0">Quantity</p>
+  </div>
+  <div class="product-options message1 quantity">
+    <input class="product-message1" type="text" id="message1" placeholder="Enter quantity..." />
+  </div>
 </div>
-      </div>
+<!-- Message1 -->
+<div class="product-selection selection-type-quantity d-flex align-items-center">
+  <div class="product-selection-text d-flex">
+    <p class="f-20 my-0">Message</p>
+  </div>
+  <div class="product-options message1">
+    <input class="product-message1" type="text" id="message1" placeholder="Type here..." />
+  </div>
+</div>
+<!-- Send Query -->
+<div class="d-flex float-end product-details-call">
+  <button class="trigger">Easy Customisation</button>
+  <input type="submit" class=" float-end send-query-button" value="Send Query">     
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
 <!-- Modal -->
-<div class="modal">
+<div class="modal" >
   <div class="modal-content">
     <div>
       <span class="close-button"><%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}close.png", alt:"" %></span>
@@ -136,7 +108,8 @@
     <div class="modal-body">
       <div class="row mx-0">
         <div class="col-lg-5 col-md-5 col-sm-12">
-          <%= image_tag "#{ENV['BUCKET_PRODUCT_URL']}product-details-1-1.png", alt:"", class:"d-block w-100" %>
+               <%= image_tag @product.images[0].url, height:"100%",width:"100%" if @product.images[0].url.present? %>
+          <%#= @product.images[0] %>
         </div>
         <div class="col-lg-7 col-md-7 col-sm-12">
           <h1 class="product-heading">Black Tank Top</h1>
@@ -148,37 +121,23 @@
             </div>
             <div class="product-options-modal color">
              <ul class="my-0">
-              <li>
-                <input type="checkbox" id="color-8" />
-                <label for="color-8"><div class="product-color color-8"></div></label>
+               <% @colors.each do |j|%>
+               <li >
+                <input type="checkbox" id="color<%= j %>" class="add-product-color-checkbox" />
+                <label for="color<%= j %>"><div class="product-color d-flex"><%= image_tag j.color.url,height:"100%",width:"100%" if j.color.url.present? %></div></label>
               </li>
-              <li>
-                <input type="checkbox" id="color-9" />
-                <label for="color-9"><div class="product-color color-9"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-10" />
-                <label for="color-10"><div class="product-color color-10"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-11" />
-                <label for="color-11"><div class="product-color color-11"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-12" />
-                <label for="color-12"><div class="product-color color-12"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-13" />
-                <label for="color-13"><div class="product-color color-13"></div></label>
-              </li>
-              <li>
-                <input type="checkbox" id="color-14" />
-                <label for="color-14"><div class="product-color color-14"></div></label>
-              </li>
+              <% end %>
             </ul>
           </div>
+          <div>
+            <button type="button" class="btn btn-success btn-xs modal-btn add-color-button" data-toggle="modal" data-target="#approvalModal" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
+              <div class="add-product-upload-color" >
+                <img src="https://sorsally.s3.ap-south-1.amazonaws.com/assets/images/add-box-line.png"/>
+              </div>
+            </button>
+          </div>
         </div>
+
         <!-- Size -->
         <div class="product-selection selection-type-size d-flex align-items-center">
           <div class="product-selection-text d-flex">
@@ -285,20 +244,58 @@
 </div>
 </div>
 </div>
+
+
+<!-- Modal 2 for color -->
+<div class="modal1 fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-color-select-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Color</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with  model: @color, url: colors_path, method: :post  do |form| %>
+        <%#= form_tag categories_path(@category), method: :post, :class => "form-horizontal" do %>
+        <%= form.label :color, :class => 'control-label' %>
+        <%= form.file_field :color, class:'form-control', placeholder:"Color Image"%>
+        <%= form.text_field :product_id , value: "#{@product.id}",type:'hidden',  class:'form-control' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%= form.submit  "Add", class: "btn btn-success  bg-primary " %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 </div>
 </section>
+
 <%= render 'shared/footer' %>
 
 <script type="text/javascript">
-$(document).ready(function(){
-  $(".trigger").click(function(){
-    console.log("e.type");
-    $(".modal").toggle("show-modal");
-  });
-   $(".close-button").click(function(){
+  $(document).ready(function(){
+    $(".trigger").click(function(){
+      console.log("e.type");
+      $(".modal").toggle("show-modal");
+    });
+    $(".trigger1").click(function(){
+      console.log("e.type");
+      $(".modal1").toggle("show-modal");
+    });
+    $(".close-button").click(function(){
       console.log("close");
-            $(".modal").toggle('show-modal');
-        });
-});
+      $(".modal").toggle('show-modal');
+    });
+  });
 </script>
+
+
+
+
+
+
+

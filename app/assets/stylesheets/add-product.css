@@ -96,9 +96,7 @@
   color: var(--text-primary-color);
   font-size: 20px;
 }
-.modal-content{
-  top: 300px;
-}
+
 .modal-btn{
   background: none !important;
   border: none !important;
@@ -116,5 +114,5 @@
   display: none;
 }
 .add-color-button{
-  padding: 0rem 0.57rem !important;
+  padding: 0rem 0.57product-colorrem !important;
 }

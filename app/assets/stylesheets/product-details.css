@@ -270,7 +270,7 @@ select:focus{
 	margin-right: 20px;
 	display: block !important ;
 }
-.modal {
+.modal, .modal1 {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -308,6 +308,11 @@ select:focus{
 	visibility: visible;
 	display: block;
 }
+.show-modal1 {
+	opacity: 1;
+	visibility: visible;
+	display: block;
+}
 .close-button img{
 	/* background: url('/home/codesat/Downloads/close.png'); */
 	/* background-repeat: no-repeat;
@@ -336,4 +341,11 @@ select:focus{
 	.product-options::-webkit-scrollbar{
 		display: none;
 	}
+}
+#exampleModal2{
+	z-index: 1067 !important;
+}
+
+.modal-color-select-dialog{
+	top: 44% !important;
 }

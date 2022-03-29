@@ -68,6 +68,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @colors = Color.where(product_id: params[:id])
     @product = Product.find_by(id: params[:id])
   end
 
