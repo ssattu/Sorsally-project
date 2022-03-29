@@ -60,7 +60,7 @@
 	padding: 18px 24px;
 }
 .product-selection-text{
-	width: 102px;
+	width: 120px;
 	border-right: 2px solid #3a3a3a;
 }
 .product-selection-text p{
@@ -348,4 +348,8 @@ select:focus{
 
 .modal-color-select-dialog{
 	top: 44% !important;
+}
+.add-color-btn{
+	 background: #00C2FF !important;
+	 border: none !important;
 }
