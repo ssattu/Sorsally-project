@@ -106,5 +106,15 @@
 }
 
 .add-product-upload-color img{
-  height: 32px !important;
+  height: 28px !important;
+}
+.add-new-product-color-checkbox ul{
+  max-width: 400px;
+  overflow-x: scroll;
+}
+.add-new-product-color-checkbox ul::-webkit-scrollbar {
+  display: none;
+}
+.add-color-button{
+  padding: 0rem 0.57rem !important;
 }

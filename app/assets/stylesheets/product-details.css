@@ -81,7 +81,7 @@
 }
 
 .product-options input[type="checkbox"][id^="color-"], .product-options input[type="checkbox"][id^="size-"], .product-options input[type="radio"][id^="quantity-"],
-.product-options-modal input[type="checkbox"][id^="color-"], .product-options-modal input[type="checkbox"][id^="size-"], .product-options-modal input[type="radio"][id^="quantity-"]{
+.product-options-modal input[type="checkbox"][id^="color-"], .product-options-modal input[type="checkbox"][id^="size-"], .product-options-modal input[type="radio"][id^="quantity-"], .add-product-color-checkbox{
 	display: none;
 }
 
