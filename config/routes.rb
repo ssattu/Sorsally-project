@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'users/:id', to: "users#destroy", as: "delete_user"
   get 'users/:id', to: "users#activate", as: "activate_user"
   get 'categories/show'
+  post 'products/:id/query', to: 'products#query', as: 'query'
 
   resources :sorsallys
   resources :galleries

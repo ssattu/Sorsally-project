@@ -68,6 +68,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     @colors = Color.where(product_id: params[:id])
     @product = Product.find_by(id: params[:id])
   end
@@ -79,6 +80,19 @@ class ProductsController < ApplicationController
     # @product.update(deleted: true)
 
     redirect_to products_path, notice: "Product is Deleted Successfully"
+  end
+
+
+  def query
+
+    @qry = Product.new(p_params)
+    @user = current_user
+    # debugger
+    ProductMailer.query(@qry, @user).deliver_now
+    # ProductMailer.(@user).query.deliver_now
+
+
+    redirect_to product_path notice: "Mail Sent"
   end
 
 
@@ -108,6 +122,6 @@ class ProductsController < ApplicationController
   end
 
   def p_params
-    params.require(:product).permit(:id, :name, :price, :gender, { color: []} , :quantity, :description, {images: []}, :category_id, {preview_images: []}, {size:[]})
+    params.require(:product).permit(:id, :name, :price, :message, :gender, { color: []} , :quantity, :description, {images: []}, :category_id, {preview_images: []}, {size:[]})
   end
 end
