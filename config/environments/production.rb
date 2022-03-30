@@ -89,10 +89,9 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+  # config.active_record.dump_schema_after_migration = false
 
   #  config.action_mailer.delivery_method = :letter_opener
-  # # config.action_mailer.perform_deliveries = true
   # config.action_mailer.default_url_options = {:host =>'localhost:3000', protocol: 'http'}
   # config.action_mailer.perform_deliveries = true
   # config.action_mailer.delivery_method = :smtp
@@ -109,6 +108,7 @@ Rails.application.configure do
     config.action_dispatch.tld_length = 2
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: ENV['APP_HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
