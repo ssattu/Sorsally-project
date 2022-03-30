@@ -353,3 +353,6 @@ select:focus{
 	 background: #00C2FF !important;
 	 border: none !important;
 }
+.product-options-modal-sub{
+	padding-left: 16px;
+}
